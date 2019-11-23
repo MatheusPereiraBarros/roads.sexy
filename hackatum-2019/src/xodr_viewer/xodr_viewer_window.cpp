@@ -20,7 +20,7 @@
 namespace aid {
     namespace xodr {
 
-        static constexpr float DRAW_SCALE = 6 * 2;
+        static constexpr float DRAW_SCALE = 8 * 4;
         static constexpr float DRAW_MARGIN = 200;
 
         struct XodrFileInfo {
@@ -143,14 +143,80 @@ namespace aid {
 
 
         constexpr double padding = 10;
-        constexpr double road_height = 0.2;
+        constexpr double driving_elevation = 0.1;
+        constexpr double sidewalk_elevation = 0.3;
+        constexpr double border_elevation = 0.35;
         constexpr int noiseScale = 5;
         constexpr int noiseHeight = 5;
+        constexpr int numPoints = 254;
 
         double getHeight(double x, double y, double minY, double minX, double width) {
             static siv::PerlinNoise noise(32);
             return noise.noise((x - minX) / width * noiseScale, (y - minY) / width * noiseScale) * noiseHeight +
                    noiseHeight;
+        }
+
+        std::stringstream writeStreet(
+                const LaneSection::BoundaryCurveTessellation &a,
+                const LaneSection::BoundaryCurveTessellation &b, double minY, double minX, double width,
+                int &index_offset, double elevation) {
+            std::stringstream res;
+            static int seg_num = 0;
+
+            int size = a.vertices_.size();
+            res << "o segment_num_" << seg_num++ << std::endl;
+
+
+            for (int j = 0; j < size; j++) {
+                Eigen::Vector2d ptl = a.vertices_[j];
+                Eigen::Vector2d ptlr = b.vertices_[j];
+                res << "v " << ptl.x() << " " << ptl.y() << " "
+                    << getHeight(ptl.x(), ptl.y(), minX, minY, width) + elevation << std::endl;
+                res << "v " << ptlr.x() << " " << ptlr.y() << " "
+                    << getHeight(ptlr.x(), ptlr.y(), minX, minY, width) + elevation << std::endl;
+            }
+            for (int j = 0; j < size; j++) {
+                Eigen::Vector2d ptl = a.vertices_[j];
+                Eigen::Vector2d ptlr = b.vertices_[j];
+                res << "v " << ptl.x() << " " << ptl.y() << " 0" << std::endl;
+                res << "v " << ptlr.x() << " " << ptlr.y() << " 0" << std::endl;
+            }
+
+            size *= 2;
+            // triangles = road surface
+            for (int j = 1; j <= size - 2; j++) {
+                if (j % 2 == 0) {
+                    res << "f " << j + index_offset << " " << j + 1 + index_offset
+                        << " " << j + 2 + index_offset << std::endl;
+                } else {
+                    res << "f " << j + index_offset << " " << j + 2 + index_offset
+                        << " " << j + 1 + index_offset << std::endl;
+                }
+            }
+            // sides
+            for (int j = 1; j <= size - 2; j++) {
+                if (j % 2 == 1) {
+                    res << "f " << j + index_offset << " " << j + size + index_offset
+                        << " " << j + 2 + size + index_offset << std::endl;
+                    res << "f " << j + index_offset
+                        << " " << j + 2 + size + index_offset << " "
+                        << j + 2 + index_offset << std::endl;
+                } else {
+                    res << "f " << j + 2 + index_offset << " " << j + 2 + size + index_offset
+                        << " " << j + size + index_offset << std::endl;
+                    res << "f " << j + index_offset
+                        << " " << j + 2 + index_offset << " "
+                        << j + size + index_offset << std::endl;
+                }
+            }
+            res << "f " << 1 + index_offset << " " << 1 + size + index_offset << " "
+                << 2 + size + index_offset << " " << 2 + index_offset << std::endl;
+
+            res << "f " << size + index_offset << " " << size + size + index_offset
+                << " " << size + size - 1 + index_offset << " "
+                << size - 1 + index_offset << std::endl;
+            index_offset += size * 2;
+            return res;
         }
 
         void XodrViewerWindow::XodrView::getObjFile() {
@@ -162,13 +228,18 @@ namespace aid {
             res2.open("./out/terrain.obj");
 
 
-            int seg_num = 0;
-            int offset = 0;
-
             double minX = std::numeric_limits<double>::infinity();
             double maxX = std::numeric_limits<double>::lowest();
             double minY = std::numeric_limits<double>::infinity();
             double maxY = std::numeric_limits<double>::lowest();
+
+            struct DrawLane {
+                const Road *r;
+                int lane_section_index;
+                int left_boundary_index;
+                double elevation;
+            };
+            std::vector<DrawLane> lanes_to_draw;
 
             // roads
             for (const Road &road : xodrMap_->roads()) {
@@ -185,47 +256,45 @@ namespace aid {
                     auto boundaries = laneSection.tessellateLaneBoundaryCurves(refLineTessellation);
                     const auto &lanes = laneSection.lanes();
 
-                    // lanes
-                    // Find first and last lane
-                    int left = -1;
-                    int right = -1;
-                    for (size_t i = 0; i < boundaries.size(); i++) {
-                        const LaneSection::BoundaryCurveTessellation &boundary = boundaries[i];
-                        if (lanes[i].type() == LaneType::BORDER || lanes[i].type() == LaneType::DRIVING) {
-                            if (left == -1) {
-                                left = i;
+                    for (size_t i = 0; i < boundaries.size() - 1; i++) {
+                        const LaneSection::BoundaryCurveTessellation &boundarya = boundaries[i];
+                        const LaneSection::BoundaryCurveTessellation &boundaryb = boundaries[i + 1];
+
+                        double elevation;
+                        if (lanes[i].type() == LaneType::DRIVING) {
+                            elevation = driving_elevation;
+                        } else if (lanes[i].type() == LaneType::SIDEWALK) {
+                            elevation = sidewalk_elevation;
+                        } else if (lanes[i].type() == LaneType::BORDER) {
+                            if ((i < 1 || lanes[i - 1].type() != LaneType::SIDEWALK) &&
+                                (i > boundaries.size() - 1 || lanes[i + 1].type() != LaneType::SIDEWALK)) {
+                                continue;
                             }
-                            right = i;
+                            elevation = border_elevation;
+                        } else {
+                            continue;
+                        }
+                        DrawLane drawLane{&road, laneSectionIdx, i, elevation};
+                        lanes_to_draw.push_back(std::move(drawLane));
+                        for (int j = 0; j < boundarya.vertices_.size(); j++) {
+                            Eigen::Vector2d ptl = boundarya.vertices_[j];
+                            Eigen::Vector2d ptlr = boundaryb.vertices_[j];
+                            minX = std::min(minX, ptl.x());
+                            maxX = std::max(maxX, ptl.x());
+                            minY = std::min(minY, ptl.y());
+                            maxY = std::max(maxY, ptl.y());
+
+                            minX = std::min(minX, ptlr.x());
+                            maxX = std::max(maxX, ptlr.x());
+                            minY = std::min(minY, ptlr.y());
+                            maxY = std::max(maxY, ptlr.y());
                         }
                     }
-                    if (left == -1 || right == -1) continue;
-                    const LaneSection::BoundaryCurveTessellation &leftBoundary = boundaries[left];
-                    const LaneSection::BoundaryCurveTessellation &rightBoundary = boundaries[right];
-                    int size = leftBoundary.vertices_.size();
-                    res << "o segment_num_" << seg_num++ << std::endl;
+                };
 
-                    for (int j = 0; j < size; j++) {
-                        Eigen::Vector2d ptl = leftBoundary.vertices_[j];
-                        Eigen::Vector2d ptlr = rightBoundary.vertices_[j];
-                        minX = std::min(minX, ptl.x());
-                        maxX = std::max(maxX, ptl.x());
-                        minY = std::min(minY, ptl.y());
-                        maxY = std::max(maxY, ptl.y());
-
-                        minX = std::min(minX, ptlr.x());
-                        maxX = std::max(maxX, ptlr.x());
-                        minY = std::min(minY, ptlr.y());
-                        maxY = std::max(maxY, ptlr.y());
-                    }
-                }
             }
 
-
             // terrain
-
-
-
-
             double deltaX = maxX - minX;
             double deltaY = maxY - minY;
 
@@ -250,79 +319,27 @@ namespace aid {
 
 
             // roads
-            for (const Road &road : xodrMap_->roads()) {
-                const auto &laneSections = road.laneSections();
+            int index_offset = 0;
+            for (const DrawLane &drawLane : lanes_to_draw) {
+                const auto &laneSections = drawLane.r->laneSections();
 
-                // find left and rig
+                const LaneSection &laneSection = laneSections[drawLane.lane_section_index];
 
-                // road section
-                for (int laneSectionIdx = 0; laneSectionIdx < (int) laneSections.size(); laneSectionIdx++) {
-                    const LaneSection &laneSection = laneSections[laneSectionIdx];
+                auto refLineTessellation = drawLane.r->referenceLine().tessellate(laneSection.startS(),
+                                                                                  laneSection.endS());
+                auto boundaries = laneSection.tessellateLaneBoundaryCurves(refLineTessellation);
+                const auto &lanes = laneSection.lanes();
 
-                    auto refLineTessellation = road.referenceLine().tessellate(laneSection.startS(),
-                                                                               laneSection.endS());
-                    auto boundaries = laneSection.tessellateLaneBoundaryCurves(refLineTessellation);
-                    const auto &lanes = laneSection.lanes();
-
-                    // lanes
-                    // Find first and last lane
-                    int left = -1;
-                    int right = -1;
-                    for (size_t i = 0; i < boundaries.size(); i++) {
-                        const LaneSection::BoundaryCurveTessellation &boundary = boundaries[i];
-                        if (lanes[i].type() == LaneType::BORDER || lanes[i].type() == LaneType::DRIVING) {
-                            if (left == -1) {
-                                left = i;
-                            }
-                            right = i;
-                        }
-                    }
-                    if (left == -1 || right == -1) continue;
-                    const LaneSection::BoundaryCurveTessellation &leftBoundary = boundaries[left];
-                    const LaneSection::BoundaryCurveTessellation &rightBoundary = boundaries[right];
-                    int size = leftBoundary.vertices_.size();
-                    res << "o segment_num_" << seg_num++ << std::endl;
-
-
-                    for (int j = 0; j < size; j++) {
-                        Eigen::Vector2d ptl = leftBoundary.vertices_[j];
-                        Eigen::Vector2d ptlr = rightBoundary.vertices_[j];
-                        res << "v " << ptl.x() << " " << ptl.y() << " "
-                            << getHeight(ptl.x(), ptl.y(), minX, minY, width) + road_height << std::endl;
-                        res << "v " << ptlr.x() << " " << ptlr.y() << " "
-                            << getHeight(ptlr.x(), ptlr.y(), minX, minY, width) + road_height << std::endl;
-                    }
-                    for (int j = 0; j < size; j++) {
-                        Eigen::Vector2d ptl = leftBoundary.vertices_[j];
-                        Eigen::Vector2d ptlr = rightBoundary.vertices_[j];
-                        res << "v " << ptl.x() << " " << ptl.y() << " 0" << std::endl;
-                        res << "v " << ptlr.x() << " " << ptlr.y() << " 0" << std::endl;
-                    }
-
-                    size *= 2;
-                    // triangles = road surface
-                    for (int j = 1; j <= size - 2; j++) {
-                        res << "f " << j + offset << " " << j + 1 + offset
-                            << " " << j + 2 + offset << std::endl;
-                    }
-                    // sides
-                    for (int j = 1; j <= size - 2; j++) {
-                        res << "f " << j + offset << " " << j + size + offset
-                            << " " << j + 2 + size + offset << " "
-                            << j + 2 + offset << std::endl;
-                    }
-                    res << "f " << 1 + offset << " " << 1 + size + offset << " "
-                        << 2 + size + offset << " " << 2 + offset << std::endl;
-
-                    res << "f " << size + offset << " " << size + size + offset
-                        << " " << size + size - 1 + offset << " "
-                        << size - 1 + offset << std::endl;
-                    offset += size * 2;
-                }
+                const LaneSection::BoundaryCurveTessellation &leftBoundary = boundaries[drawLane.left_boundary_index];
+                const LaneSection::BoundaryCurveTessellation &rightBoundary = boundaries[drawLane.left_boundary_index +
+                                                                                         1];
+                std::stringstream write =
+                        writeStreet(leftBoundary,
+                                    rightBoundary, minY, minX, width, index_offset, drawLane.elevation);
+                res << write.rdbuf();
             }
 
 
-            int numPoints = 254;
             double delta = width / (numPoints - 1);
 
 
@@ -339,10 +356,10 @@ namespace aid {
             for (int c = 0; c < numPoints - 1; c++) {
                 for (int r = 0; r < numPoints - 1; r++) {
                     int startNum = 1 + c + r * numPoints;
-                    res2 << "f " << startNum << " " << startNum + numPoints << " "
-                         << startNum + numPoints + 1 << std::endl;
                     res2 << "f " << startNum << " " << startNum + numPoints + 1 << " "
-                         << startNum + 1 << std::endl;
+                         << startNum + numPoints << std::endl;
+                    res2 << "f " << startNum << " " << startNum + 1 << " "
+                         << startNum + numPoints + 1 << std::endl;
                 }
             }
             res.close();
@@ -358,42 +375,38 @@ namespace aid {
             QVector <QPointF> allPoints;
 
             // roads
-            for (
-                const Road &road
-                    : xodrMap_->
-
-                    roads()
-
-                    ) {
+            for (const Road &road : xodrMap_->roads()) {
                 const auto &laneSections = road.laneSections();
 
-//                // debug line highlighting
-//                for (int laneSectionIdx = 0; laneSectionIdx < (int) laneSections.size(); laneSectionIdx++) {
-//                    const LaneSection &laneSection = laneSections[laneSectionIdx];
-//
-//                    auto refLineTessellation = road.referenceLine().tessellate(laneSection.startS(),
-//                                                                               laneSection.endS());
-//                    auto boundaries = laneSection.tessellateLaneBoundaryCurves(refLineTessellation);
-//                    const auto &lanes = laneSection.lanes();
-//
-//                    for (size_t i = 0; i < boundaries.size(); i++) {
-//                        if (lanes[i].type() == LaneType::DRIVING) {
-//                            painter.setPen(QPen(Qt::yellow, 4, Qt::SolidLine, Qt::RoundCap));
-//                        } else if (lanes[i].type() == LaneType::SIDEWALK) {
-//                            painter.setPen(QPen(Qt::cyan, 4, Qt::SolidLine, Qt::RoundCap));
-//                        } else {
-//                            painter.setPen(QPen(Qt::lightGray, 1, Qt::SolidLine, Qt::RoundCap));
-//                        }
-//
-//                        const LaneSection::BoundaryCurveTessellation &boundary = boundaries[i];
-//                        QVector <QPointF> points;
-//                        for (Eigen::Vector2d pt : boundary.vertices_) {
-//                            points.append(pointMapToView(pt));
-//                        }
-//
-//                        painter.drawPolyline(points);
-//                    }
-//                }
+                // debug line highlighting
+                for (int laneSectionIdx = 0; laneSectionIdx < (int) laneSections.size(); laneSectionIdx++) {
+                    const LaneSection &laneSection = laneSections[laneSectionIdx];
+
+                    auto refLineTessellation = road.referenceLine().tessellate(laneSection.startS(),
+                                                                               laneSection.endS());
+                    auto boundaries = laneSection.tessellateLaneBoundaryCurves(refLineTessellation);
+                    const auto &lanes = laneSection.lanes();
+
+                    for (size_t i = 0; i < boundaries.size(); i++) {
+                        if (lanes[i].type() == LaneType::DRIVING) {
+                            painter.setPen(QPen(Qt::yellow, 4, Qt::SolidLine, Qt::RoundCap));
+                        } else if (lanes[i].type() == LaneType::SIDEWALK) {
+                            painter.setPen(QPen(Qt::cyan, 4, Qt::SolidLine, Qt::RoundCap));
+                        } else if (lanes[i].type() == LaneType::NONE) {
+                            painter.setPen(QPen(Qt::red, 4, Qt::SolidLine, Qt::RoundCap));
+                        } else {
+                            painter.setPen(QPen(Qt::lightGray, 1, Qt::SolidLine, Qt::RoundCap));
+                        }
+
+                        const LaneSection::BoundaryCurveTessellation &boundary = boundaries[i];
+                        QVector <QPointF> points;
+                        for (Eigen::Vector2d pt : boundary.vertices_) {
+                            points.append(pointMapToView(pt));
+                        }
+
+                        painter.drawPolyline(points);
+                    }
+                }
 
 
                 // find left and rig
@@ -450,57 +463,42 @@ namespace aid {
                     for (
                         Eigen::Vector2d pt
                             : leftBoundary.vertices_) {
-                        leftPoints.
-                                append(pointMapToView(pt)
+                        leftPoints.append(pointMapToView(pt)
                         );
-                        allPoints.
-                                append(pointMapToView(pt)
+                        allPoints.append(pointMapToView(pt)
                         );
                     }
-                    rightPoints.
-                            append(leftPoints[0]);
+                    rightPoints.append(leftPoints[0]);
                     int i = 0;
                     for (
                         Eigen::Vector2d pt
                             : rightBoundary.vertices_) {
-                        rightPoints.
-                                append(pointMapToView(pt)
+                        rightPoints.append(pointMapToView(pt)
                         );
                         QVector <QPointF> connector;
 
-                        connector.
-                                append(pointMapToView(pt)
+                        connector.append(pointMapToView(pt)
                         );
-                        connector.
-                                append(leftPoints[i]);
-                        painter.
-                                setPen(QPen(Qt::black, 1, Qt::SolidLine, Qt::RoundCap)
+                        connector.append(leftPoints[i]);
+                        painter.setPen(QPen(Qt::black, 1, Qt::SolidLine, Qt::RoundCap)
                         );
-                        painter.
-                                drawPolyline(connector);
-                        allPoints.
-                                append(pointMapToView(pt)
+                        painter.drawPolyline(connector);
+                        allPoints.append(pointMapToView(pt)
                         );
                         i++;
                     }
-                    rightPoints.
-                            append(leftPoints[leftPoints.size() - 1]);
+                    rightPoints.append(leftPoints[leftPoints.size() - 1]);
 
-                    painter.
-                            setPen(QPen(Qt::green, 3, Qt::SolidLine, Qt::RoundCap)
+                    painter.setPen(QPen(Qt::green, 3, Qt::SolidLine, Qt::RoundCap)
                     );
-                    painter.
-                            drawPolyline(rightPoints);
-                    painter.
-                            drawPolyline(leftPoints);
+                    //painter.drawPolyline(rightPoints);
+                    //painter.drawPolyline(leftPoints);
 
                 }
             }
 
 //painter.drawPoints(qtPoints);
-            painter.
-                    setPen(QPen(Qt::red, 5, Qt::SolidLine, Qt::RoundCap)
-            );
+            painter.setPen(QPen(Qt::red, 5, Qt::SolidLine, Qt::RoundCap));
             int i = 0;
             for (
                 auto &point
