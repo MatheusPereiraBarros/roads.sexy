@@ -265,6 +265,10 @@ namespace aid {
             std::ofstream terrain;
             terrain.open("./out/terrain.obj");
 
+            int all_off = 0;
+            std::ofstream all;
+            all.open("./out/all.obj");
+
             std::ofstream terrain_hm;
             terrain_hm.open("./out/terrain.raw", std::ios::out | std::ios::binary);
 
@@ -401,32 +405,44 @@ namespace aid {
 
             for (const DrawLane &drawLane: lanes_to_draw) {
                 std::stringstream write =
-                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, streets_off, drawLane.elevation);
+                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, all_off, drawLane.elevation);
+                all << write.rdbuf();
+
+                write = writeStreet(drawLane.left, drawLane.right, minY, minX, width, streets_off, drawLane.elevation);
                 streets << write.rdbuf();
             }
             for (const DrawLane &drawLane: lanes_to_draw_boundary) {
                 std::stringstream write =
-                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, border_off, drawLane.elevation);
+                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, all_off, drawLane.elevation);
+                all << write.rdbuf();
+
+                write = writeStreet(drawLane.left, drawLane.right, minY, minX, width, streets_off, drawLane.elevation);
                 border << write.rdbuf();
             }
             for (const DrawLane &drawLane: lanes_to_draw_markings) {
                 std::stringstream write =
-                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, markings_off, drawLane.elevation);
+                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, all_off, drawLane.elevation);
+                all << write.rdbuf();
+
+                write = writeStreet(drawLane.left, drawLane.right, minY, minX, width, streets_off, drawLane.elevation);
                 markings << write.rdbuf();
             }
             for (const DrawLane &drawLane: lanes_to_draw_sidewalk) {
                 std::stringstream write =
-                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, sidewalk_off, drawLane.elevation);
+                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, all_off, drawLane.elevation);
+                all << write.rdbuf();
+
+                write = writeStreet(drawLane.left, drawLane.right, minY, minX, width, streets_off, drawLane.elevation);
                 sidewalk << write.rdbuf();
             }
-
 
             double delta = width / (numPoints - 1);
 
 
             terrain << "o terrain" <<
-                 std::endl;
-
+                    std::endl;
+            all << "o terrain" <<
+                    std::endl;
 
             for (
                     int c = 0;
@@ -442,7 +458,10 @@ namespace aid {
                     unsigned short z_discrete = static_cast<short>(z / (2 * noiseHeight) * 8192);
                     terrain_hm.write((char *) &z_discrete, sizeof(z_discrete));
                     terrain << "v " << x << " " << y << " " << z <<
-                         std::endl;
+                            std::endl;
+                    all << "v " << x << " " << y << " " << z <<
+                            std::endl;
+
                 }
             }
 
@@ -454,11 +473,21 @@ namespace aid {
                         r < numPoints - 1; r++) {
                     int startNum = 1 + c + r * numPoints;
                     terrain << "f " << startNum << " " << startNum + numPoints + 1 << " "
-                         << startNum + numPoints <<
-                         std::endl;
+                            << startNum + numPoints <<
+                            std::endl;
                     terrain << "f " << startNum << " " << startNum + 1 << " "
-                         << startNum + numPoints + 1 <<
-                         std::endl;
+                            << startNum + numPoints + 1 <<
+                            std::endl;
+
+                    startNum += all_off;
+                    all << "f " << startNum << " " << startNum + numPoints + 1 << " "
+                            << startNum + numPoints <<
+                            std::endl;
+                    all << "f " << startNum << " " << startNum + 1 << " "
+                            << startNum + numPoints + 1 <<
+                            std::endl;
+
+
                 }
             }
             streets.close();
@@ -467,6 +496,7 @@ namespace aid {
             markings.close();
             terrain.close();
             terrain_hm.close();
+            all.close();
 
             std::cout << "Finished writing file." << std::endl <<
                       std::flush;

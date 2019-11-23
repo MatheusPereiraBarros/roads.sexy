@@ -12,12 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="879b6ea1-e65d-48ac-8296-b4b9953786c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeError.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/xodr_viewer/xodr_viewer" beforeDir="false" afterPath="$PROJECT_DIR$/build/xodr_viewer/xodr_viewer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/opendrive/CulDeSac.xodr" beforeDir="false" afterPath="$PROJECT_DIR$/data/opendrive/CulDeSac.xodr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/road.obj" beforeDir="false" afterPath="$PROJECT_DIR$/out/road.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/terrain.obj" beforeDir="false" afterPath="$PROJECT_DIR$/out/terrain.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/terrain.raw" beforeDir="false" afterPath="$PROJECT_DIR$/out/terrain.raw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp" afterDir="false" />
@@ -37,15 +32,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="419" column="24" selection-start-line="419" selection-start-column="24" selection-end-line="419" selection-end-column="24" />
+            <state relative-caret-position="535">
+              <caret line="481" column="40" selection-start-line="481" selection-start-column="40" selection-end-line="481" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/out/markings.obj">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -122,6 +121,9 @@
       <find>res</find>
       <find>terrain</find>
       <find>offset</find>
+      <find>sidewalk</find>
+      <find>all</find>
+      <find>terrain &lt;&lt;</find>
     </findStrings>
     <replaceStrings>
       <replace>index_offset</replace>
@@ -244,7 +246,7 @@
       <updated>1574505762675</updated>
       <workItem from="1574505764170" duration="3511000" />
       <workItem from="1574511073433" duration="1192000" />
-      <workItem from="1574512442962" duration="27833000" />
+      <workItem from="1574512442962" duration="28593000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <created>1574506967577</created>
@@ -264,13 +266,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32536000" />
+    <option name="totallyTimeSpent" value="33296000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="41" width="2560" height="1399" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25642055" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25642055" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -282,7 +284,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.2539159" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49879614" visible="true" weight="0.2943116" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49879614" visible="true" weight="0.2943116" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50120384" side_tool="true" weight="0.26380873" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4995987" weight="0.28771642" />
       <window_info anchor="bottom" id="CMake" order="12" />
@@ -434,12 +436,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/out/markings.obj">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="419" column="24" selection-start-line="419" selection-start-column="24" selection-end-line="419" selection-end-column="24" />
+        <state relative-caret-position="535">
+          <caret line="481" column="40" selection-start-line="481" selection-start-column="40" selection-end-line="481" selection-end-column="40" />
         </state>
       </provider>
     </entry>
