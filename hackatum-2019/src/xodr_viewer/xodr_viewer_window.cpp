@@ -46,7 +46,7 @@ namespace aid {
              */
             XodrView(QWidget *parent = nullptr) : QWidget(parent) {}
 
-            void setMap(std::unique_ptr <XodrMap> &&xodrMap);
+            void setMap(std::unique_ptr<XodrMap> &&xodrMap);
 
             virtual void paintEvent(QPaintEvent *evnt) override;
 
@@ -61,7 +61,7 @@ namespace aid {
              */
             QPointF pointMapToView(const Eigen::Vector2d pt) const;
 
-            std::unique_ptr <XodrMap> xodrMap_;
+            std::unique_ptr<XodrMap> xodrMap_;
 
             /**
              * @brief The offset used in the pointMapToView function.
@@ -103,7 +103,7 @@ namespace aid {
             XodrParseResult <XodrMap> fromFileRes = XodrMap::fromFile(path);
 
             if (!fromFileRes.hasFatalErrors()) {
-                std::unique_ptr <XodrMap> xodrMap(new XodrMap(std::move(fromFileRes.value())));
+                std::unique_ptr<XodrMap> xodrMap(new XodrMap(std::move(fromFileRes.value())));
                 xodrView_->setMap(std::move(xodrMap));
             } else {
                 std::cout << "Errors: " << std::endl;
@@ -115,7 +115,7 @@ namespace aid {
             }
         }
 
-        void XodrViewerWindow::XodrView::setMap(std::unique_ptr <XodrMap> &&xodrMap) {
+        void XodrViewerWindow::XodrView::setMap(std::unique_ptr<XodrMap> &&xodrMap) {
             xodrMap_ = std::move(xodrMap);
 
             BoundingRect boundingRect = xodrMapApproxBoundingRect(*xodrMap_);
@@ -190,21 +190,21 @@ namespace aid {
                     }
                     size *= 2;
                     // triangles = road surface
-                    for (int j = 1; j <= size -  2; j++) {
-                        res << "f " << j + offset<< " " << j + 1 + offset
-                            << " " << j + 2 + offset<< std::endl;
+                    for (int j = 1; j <= size - 2; j++) {
+                        res << "f " << j + offset << " " << j + 1 + offset
+                            << " " << j + 2 + offset << std::endl;
                     }
                     // sides
-                    for (int j = 1; j <= size -  2; j++) {
-                        res << "f " << j + offset<< " " << j + size + offset
+                    for (int j = 1; j <= size - 2; j++) {
+                        res << "f " << j + offset << " " << j + size + offset
                             << " " << j + 2 + size + offset << " "
                             << j + 2 + offset << std::endl;
                     }
-                    res << "f " << 1 + offset<< " " << 1 + size + offset<< " "
+                    res << "f " << 1 + offset << " " << 1 + size + offset << " "
                         << 2 + size + offset << " " << 2 + offset << std::endl;
 
-                    res << "f " << size + offset<< " " << size + size + offset
-                        << " " << size + size - 1 + offset<< " "
+                    res << "f " << size + offset << " " << size + size + offset
+                        << " " << size + size - 1 + offset << " "
                         << size - 1 + offset << std::endl;
                     offset += size * 2;
                 }
@@ -217,16 +217,15 @@ namespace aid {
 
             static int counter = 0;
             std::ofstream file;
-            file.open("/home/walter/Documents/sandbox/roads.sexy/data/" + std::to_string(counter++) + ".obj");
+            file.open("./out/" + std::to_string(counter++) + ".obj");
             if (file) {
-              file << getObjFile().rdbuf();
+                file << getObjFile().rdbuf();
 
-              file.close();
-              std::cout << "print" << std::endl << std::flush;
+                file.close();
+                std::cout << "print" << std::endl << std::flush;
             }
 
             QVector <QPointF> allPoints;
-
 
 
             // roads
@@ -279,83 +278,12 @@ namespace aid {
                         allPoints.append(pointMapToView(pt));
                         i++;
                     }
-                    rightPoints.append(leftPoints[leftPoints.size()-1]);
+                    rightPoints.append(leftPoints[leftPoints.size() - 1]);
 
                     painter.setPen(QPen(Qt::green, 3, Qt::SolidLine, Qt::RoundCap));
                     painter.drawPolyline(rightPoints);
                     painter.drawPolyline(leftPoints);
 
-
-                    // draw sidewalks
-                    // roads
-                    for (const Road &road : xodrMap_->roads()) {
-                        const auto &laneSections = road.laneSections();
-
-                        // find left and rig
-
-                        // road section
-                        for (int laneSectionIdx = 0; laneSectionIdx < (int) laneSections.size(); laneSectionIdx++) {
-                            const LaneSection &laneSection = laneSections[laneSectionIdx];
-
-                            auto refLineTessellation = road.referenceLine().tessellate(laneSection.startS(),
-                                                                                       laneSection.endS());
-                            auto boundaries = laneSection.tessellateLaneBoundaryCurves(refLineTessellation);
-                            const auto &lanes = laneSection.lanes();
-
-                            // lanes
-                            // Find first and last lane
-
-                            for (size_t i = 0; i < boundaries.size(); i++) {
-                                const LaneSection::BoundaryCurveTessellation &boundary = boundaries[i];
-                                if (lanes[i].type() == LaneType::SIDEWALK) {
-                                  QVector <QPointF> sidePoints;
-                                  for (Eigen::Vector2d pt : boundary.vertices_) {
-                                      sidePoints.append(pointMapToView(pt));
-                                  }
-                                  painter.setPen(QPen(Qt::magenta, 3, Qt::SolidLine, Qt::RoundCap));
-                                  painter.drawPolyline(sidePoints);
-                                }
-                            }
-                          }
-                        }
-
-
-//
-//
-//                    for (size_t i = 0; i < boundaries.size(); i++) {
-//                        if (i != begin && i != end) continue;
-//                        const LaneSection::BoundaryCurveTessellation &boundary = boundaries[i];
-//                        if (i == 0) {
-//                            // The left-most boundary. Only render it if the left-most
-//                            // lane is visible.
-//                            if (!showLaneType(lanes[i].type())) {
-//                                continue;
-//                            }
-//
-//                        } else if (i == boundaries.size() - 1) {
-//                            // The right-most boundary. Only render it if the right-most
-//                            // lane is visible.
-//                            if (!showLaneType(lanes[i - 1].type())) {
-//                                continue;
-//                            }
-//
-//
-//                        } else {
-//                            // A boundary between two lanes. Render it if at least one
-//                            // of the two adjacent lanes is visible.
-//                            if (!showLaneType(lanes[i - 1].type()) &&
-//                                !showLaneType(lanes[i].type())) {
-//                                continue;
-//                            }
-//                        }
-//
-//                        QVector <QPointF> qtPoints;
-//                        for (Eigen::Vector2d pt : boundary.vertices_) {
-//                            qtPoints.append(pointMapToView(pt));
-//                            allPoints.append(pointMapToView(pt));
-//                        }
-//                        painter.drawPolyline(qtPoints);
-//                    }
                 }
             }
 

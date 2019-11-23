@@ -1,4 +1,4 @@
-# Install script for directory: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr_viewer
+# Install script for directory: /home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr_viewer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

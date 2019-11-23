@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src
+CMAKE_SOURCE_DIR = /home/workstation/Desktop/roads.sexy/hackatum-2019/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build
+CMAKE_BINARY_DIR = /home/workstation/Desktop/roads.sexy/hackatum-2019/build
 
 # Include any dependencies generated for this target.
 include extern/gtest/googlemock/CMakeFiles/gmock.dir/depend.make
@@ -58,17 +58,17 @@ include extern/gtest/googlemock/CMakeFiles/gmock.dir/progress.make
 include extern/gtest/googlemock/CMakeFiles/gmock.dir/flags.make
 
 extern/gtest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: extern/gtest/googlemock/CMakeFiles/gmock.dir/flags.make
-extern/gtest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/extern/gtest/googlemock/src/gmock-all.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object extern/gtest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
-	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/extern/gtest/googlemock && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/extern/gtest/googlemock/src/gmock-all.cc
+extern/gtest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: /home/workstation/Desktop/roads.sexy/hackatum-2019/src/extern/gtest/googlemock/src/gmock-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/workstation/Desktop/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object extern/gtest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+	cd /home/workstation/Desktop/roads.sexy/hackatum-2019/build/extern/gtest/googlemock && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/workstation/Desktop/roads.sexy/hackatum-2019/src/extern/gtest/googlemock/src/gmock-all.cc
 
 extern/gtest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gmock.dir/src/gmock-all.cc.i"
-	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/extern/gtest/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/extern/gtest/googlemock/src/gmock-all.cc > CMakeFiles/gmock.dir/src/gmock-all.cc.i
+	cd /home/workstation/Desktop/roads.sexy/hackatum-2019/build/extern/gtest/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/workstation/Desktop/roads.sexy/hackatum-2019/src/extern/gtest/googlemock/src/gmock-all.cc > CMakeFiles/gmock.dir/src/gmock-all.cc.i
 
 extern/gtest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gmock.dir/src/gmock-all.cc.s"
-	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/extern/gtest/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/extern/gtest/googlemock/src/gmock-all.cc -o CMakeFiles/gmock.dir/src/gmock-all.cc.s
+	cd /home/workstation/Desktop/roads.sexy/hackatum-2019/build/extern/gtest/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/workstation/Desktop/roads.sexy/hackatum-2019/src/extern/gtest/googlemock/src/gmock-all.cc -o CMakeFiles/gmock.dir/src/gmock-all.cc.s
 
 extern/gtest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.requires:
 
@@ -91,9 +91,9 @@ gmock_EXTERNAL_OBJECTS =
 extern/gtest/googlemock/libgmock.a: extern/gtest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
 extern/gtest/googlemock/libgmock.a: extern/gtest/googlemock/CMakeFiles/gmock.dir/build.make
 extern/gtest/googlemock/libgmock.a: extern/gtest/googlemock/CMakeFiles/gmock.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgmock.a"
-	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/extern/gtest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean_target.cmake
-	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/extern/gtest/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/workstation/Desktop/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgmock.a"
+	cd /home/workstation/Desktop/roads.sexy/hackatum-2019/build/extern/gtest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean_target.cmake
+	cd /home/workstation/Desktop/roads.sexy/hackatum-2019/build/extern/gtest/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 extern/gtest/googlemock/CMakeFiles/gmock.dir/build: extern/gtest/googlemock/libgmock.a
@@ -105,10 +105,10 @@ extern/gtest/googlemock/CMakeFiles/gmock.dir/requires: extern/gtest/googlemock/C
 .PHONY : extern/gtest/googlemock/CMakeFiles/gmock.dir/requires
 
 extern/gtest/googlemock/CMakeFiles/gmock.dir/clean:
-	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/extern/gtest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean.cmake
+	cd /home/workstation/Desktop/roads.sexy/hackatum-2019/build/extern/gtest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean.cmake
 .PHONY : extern/gtest/googlemock/CMakeFiles/gmock.dir/clean
 
 extern/gtest/googlemock/CMakeFiles/gmock.dir/depend:
-	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/extern/gtest/googlemock /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/extern/gtest/googlemock /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/extern/gtest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/workstation/Desktop/roads.sexy/hackatum-2019/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/workstation/Desktop/roads.sexy/hackatum-2019/src /home/workstation/Desktop/roads.sexy/hackatum-2019/src/extern/gtest/googlemock /home/workstation/Desktop/roads.sexy/hackatum-2019/build /home/workstation/Desktop/roads.sexy/hackatum-2019/build/extern/gtest/googlemock /home/workstation/Desktop/roads.sexy/hackatum-2019/build/extern/gtest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : extern/gtest/googlemock/CMakeFiles/gmock.dir/depend
 

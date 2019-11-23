@@ -6,95 +6,95 @@
 
 #IncludeRegexTransform: 
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./elevation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./elevation.h
 poly3.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./poly3.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./poly3.h
 xml/xml_parse_result.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xml/xml_parse_result.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xml/xml_parse_result.h
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 vector
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./junction.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./junction.h
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 xodr_object_reference.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_object_reference.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_object_reference.h
 road_link.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./road_link.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./road_link.h
 lane_id.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./lane_id.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./lane_id.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./lane_attributes.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./lane_attributes.h
 string
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 units.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./units.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./units.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./lane_id.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./lane_id.h
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 climits
 -
 cassert
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./lane_section.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./lane_section.h
 Eigen/Dense
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 poly3.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./poly3.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./poly3.h
 reference_line.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./reference_line.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./reference_line.h
 road_link.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./road_link.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./road_link.h
 lane_id.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./lane_id.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./lane_id.h
 lane_attributes.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./lane_attributes.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./lane_attributes.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./poly3.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./poly3.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./reference_line.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./reference_line.h
 memory
 -
 Eigen/Dense
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 poly3.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./poly3.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./poly3.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./road.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./road.h
 boost/optional.hpp
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 reference_line.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./reference_line.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./reference_line.h
 elevation.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./elevation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./elevation.h
 lane_section.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./lane_section.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./lane_section.h
 road_link.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./road_link.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./road_link.h
 road_object.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./road_object.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./road_object.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./road_link.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./road_link.h
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 xodr_object_reference.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_object_reference.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_object_reference.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xml/xml_attribute_parsers.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./road_object.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./road_object.h
 string
 -
 cmath
@@ -102,65 +102,65 @@ cmath
 memory
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 road_object_outline.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./road_object_outline.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./road_object_outline.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./road_object_outline.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./road_object_outline.h
 boost/variant.hpp
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./units.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./units.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xml/xml_attribute_parsers.h
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./validation/lane_link_validation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./validation/lane_link_validation.h
 memory
 -
 validation/link_validation_base.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./validation/validation/link_validation_base.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./validation/validation/link_validation_base.h
 xodr_map_keys.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./validation/xodr_map_keys.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./validation/xodr_map_keys.h
 junction.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./validation/junction.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./validation/junction.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./validation/link_validation_base.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./validation/link_validation_base.h
 string
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./validation/road_link_validation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./validation/road_link_validation.h
 string
 -
 memory
 -
 validation/link_validation_base.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./validation/validation/link_validation_base.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./validation/validation/link_validation_base.h
 xodr_map_keys.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./validation/xodr_map_keys.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./validation/xodr_map_keys.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xml/xml_attribute_parsers.h
 string
 -
 functional
 -
 xml_parse_result.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xml/xml_parse_result.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xml/xml_parse_result.h
 xml_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xml/xml_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xml/xml_reader.h
 xml_attribute_parsers_impl.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xml/xml_attribute_parsers_impl.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xml/xml_attribute_parsers_impl.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xml/xml_attribute_parsers_impl.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xml/xml_attribute_parsers_impl.h
 sstream
 -
 algorithm
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xml/xml_parse_result.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xml/xml_parse_result.h
 cassert
 -
 string
@@ -170,41 +170,41 @@ vector
 iostream
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xml/xml_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xml/xml_reader.h
 string
 -
 vector
 -
 tinyxml.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xml/tinyxml.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xml/tinyxml.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_map.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_map.h
 boost/optional.hpp
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 road.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./road.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./road.h
 junction.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./junction.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./junction.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_map_keys.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_map_keys.h
 road_link.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./road_link.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./road_link.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_object_reference.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_object_reference.h
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 map
 -
 string
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xodr_reader.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xml/xml_attribute_parsers.h
 xml/xml_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/./xml/xml_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/./xml/xml_reader.h
 cassert
 -
 assert.h
@@ -214,109 +214,109 @@ map
 boost/variant.hpp
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/elevation.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/elevation.cpp
 elevation.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/elevation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/elevation.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
 xml/xml_child_element_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/elevation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/elevation.h
 poly3.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/poly3.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/poly3.h
 xml/xml_parse_result.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_parse_result.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_parse_result.h
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 vector
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/junction.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/junction.cpp
 junction.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/junction.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/junction.h
 climits
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/junction.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/junction.h
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 xodr_object_reference.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_object_reference.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_object_reference.h
 road_link.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_link.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_link.h
 lane_id.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_id.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_id.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/junction_parser.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/junction_parser.cpp
 junction.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/junction.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/junction.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
 xml/xml_child_element_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_attributes.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_attributes.cpp
 lane_attributes.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_attributes.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_attributes.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
 units.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/units.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/units.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_attributes.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_attributes.h
 string
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 units.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/units.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/units.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_id.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_id.h
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 climits
 -
 cassert
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_section.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_section.cpp
 lane_section.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_section.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_section.h
 cmath
 -
 climits
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_section.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_section.h
 Eigen/Dense
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 poly3.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/poly3.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/poly3.h
 reference_line.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/reference_line.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/reference_line.h
 road_link.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_link.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_link.h
 lane_id.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_id.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_id.h
 lane_attributes.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_attributes.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_attributes.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_section_parser.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_section_parser.cpp
 lane_section.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_section.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_section.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
 xml/xml_child_element_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/odrSpiral/odrSpiral.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/odrSpiral/odrSpiral.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/poly3.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/poly3.cpp
 poly3.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/poly3.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/poly3.h
 algorithm
 -
 cassert
@@ -326,77 +326,77 @@ cmath
 functional
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/poly3.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/poly3.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/reference_line.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/reference_line.cpp
 reference_line.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/reference_line.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/reference_line.h
 cmath
 -
 odrSpiral/odrSpiral.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/odrSpiral/odrSpiral.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/odrSpiral/odrSpiral.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/reference_line.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/reference_line.h
 memory
 -
 Eigen/Dense
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 poly3.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/poly3.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/poly3.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/reference_line_parser.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/reference_line_parser.cpp
 reference_line.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/reference_line.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/reference_line.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
 xml/xml_child_element_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road.cpp
 road.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road.h
 boost/optional.hpp
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 reference_line.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/reference_line.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/reference_line.h
 elevation.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/elevation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/elevation.h
 lane_section.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_section.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_section.h
 road_link.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_link.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_link.h
 road_object.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_object.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_object.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_link.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_link.cpp
 road_link.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_link.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_link.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_link.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_link.h
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 xodr_object_reference.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_object_reference.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_object_reference.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_link_parser.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_link_parser.cpp
 road_link.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_link.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_link.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
 xml/xml_child_element_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_object.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_object.cpp
 road_object.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_object.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_object.h
 limits
 -
 map
@@ -404,11 +404,11 @@ map
 sstream
 -
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
 xml/xml_child_element_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_object.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_object.h
 string
 -
 cmath
@@ -416,107 +416,107 @@ cmath
 memory
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 road_object_outline.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_object_outline.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_object_outline.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_object_outline.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_object_outline.cpp
 road_object_outline.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_object_outline.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_object_outline.h
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
 xml/xml_child_element_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_object_outline.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_object_outline.h
 boost/variant.hpp
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_parser.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_parser.cpp
 road.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road.h
 xml/xml_child_element_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/units.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/units.cpp
 units.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/units.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/units.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/units.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/units.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/junction_validation.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/junction_validation.cpp
 junction_validation.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/junction_validation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/junction_validation.h
 sstream
 -
 xodr_map.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/xodr_map.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/xodr_map.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/junction_validation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/junction_validation.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/lane_link_validation.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/lane_link_validation.cpp
 validation/lane_link_validation.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/validation/lane_link_validation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/validation/lane_link_validation.h
 cassert
 -
 xodr_map.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/xodr_map.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/xodr_map.h
 validation/road_link_validation.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/validation/road_link_validation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/validation/road_link_validation.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/road_link_validation.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/road_link_validation.cpp
 validation/road_link_validation.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/validation/road_link_validation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/validation/road_link_validation.h
 sstream
 -
 validation/lane_link_validation.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/validation/lane_link_validation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/validation/lane_link_validation.h
 xodr_map.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/xodr_map.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/xodr_map.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/road_link_validation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/road_link_validation.h
 string
 -
 memory
 -
 validation/link_validation_base.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/validation/link_validation_base.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/validation/link_validation_base.h
 xodr_map_keys.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/xodr_map_keys.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/xodr_map_keys.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.cpp
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml/xml_attribute_parsers.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
 string
 -
 functional
 -
 xml_parse_result.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_parse_result.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_parse_result.h
 xml_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_reader.h
 xml_attribute_parsers_impl.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers_impl.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers_impl.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers_impl.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers_impl.h
 sstream
 -
 algorithm
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
 functional
 -
 vector
@@ -524,25 +524,25 @@ vector
 boost/optional.hpp
 -
 xml_parse_result.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_parse_result.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_parse_result.h
 xml_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_reader.h
 xml_child_element_parsers_impl.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers_impl.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers_impl.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers_impl.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers_impl.h
 sstream
 -
 algorithm
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_parse_result.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_parse_result.cpp
 xml/xml_parse_result.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml/xml_parse_result.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml/xml_parse_result.h
 sstream
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_parse_result.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_parse_result.h
 cassert
 -
 string
@@ -552,9 +552,9 @@ vector
 iostream
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_reader.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_reader.cpp
 xml/xml_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml/xml_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml/xml_reader.h
 stdexcept
 -
 sstream
@@ -562,73 +562,73 @@ sstream
 vector
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_reader.h
 string
 -
 vector
 -
 tinyxml.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/tinyxml.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/tinyxml.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_map.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_map.cpp
 xodr_map.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_map.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_map.h
 validation/road_link_validation.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/road_link_validation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/road_link_validation.h
 validation/junction_validation.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/validation/junction_validation.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/validation/junction_validation.h
 xml/xml_child_element_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_child_element_parsers.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_map.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_map.h
 boost/optional.hpp
 -
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 road.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road.h
 junction.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/junction.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/junction.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_map_keys.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_map_keys.cpp
 xodr_map_keys.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_map_keys.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_map_keys.h
 sstream
 -
 xodr_map.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_map.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_map.h
 lane_section.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/lane_section.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/lane_section.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_map_keys.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_map_keys.h
 road_link.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/road_link.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/road_link.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_object_reference.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_object_reference.cpp
 xodr_object_reference.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_object_reference.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_object_reference.h
 cassert
 -
 sstream
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_object_reference.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_object_reference.h
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 map
 -
 string
 -
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.cpp
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.cpp
 xodr_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xodr_reader.h
 xml/xml_attribute_parsers.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_attribute_parsers.h
 xml/xml_reader.h
-/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/xml/xml_reader.h
+/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/xml/xml_reader.h
 cassert
 -
 assert.h

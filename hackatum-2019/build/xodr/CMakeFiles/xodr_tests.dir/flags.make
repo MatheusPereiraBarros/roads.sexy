@@ -6,5 +6,5 @@ CXX_FLAGS =   -pthread
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/. -I/usr/include/eigen3 -isystem /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/extern/gtest/googletest/include -isystem /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/extern/gtest/googletest 
+CXX_INCLUDES = -I/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/. -I/usr/include/eigen3 -isystem /home/workstation/Desktop/roads.sexy/hackatum-2019/src/extern/gtest/googletest/include -isystem /home/workstation/Desktop/roads.sexy/hackatum-2019/src/extern/gtest/googletest 
 

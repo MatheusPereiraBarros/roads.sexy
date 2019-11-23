@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src
+CMAKE_SOURCE_DIR = /home/workstation/Desktop/roads.sexy/hackatum-2019/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build
+CMAKE_BINARY_DIR = /home/workstation/Desktop/roads.sexy/hackatum-2019/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,9 +126,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/workstation/Desktop/roads.sexy/hackatum-2019/build/CMakeFiles /home/workstation/Desktop/roads.sexy/hackatum-2019/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/workstation/Desktop/roads.sexy/hackatum-2019/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

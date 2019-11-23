@@ -7,11 +7,11 @@ C_FLAGS =
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/. -I/usr/include/eigen3 
+C_INCLUDES = -I/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/. -I/usr/include/eigen3 
 
 CXX_FLAGS =  
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/. -I/usr/include/eigen3 
+CXX_INCLUDES = -I/home/workstation/Desktop/roads.sexy/hackatum-2019/src/xodr/. -I/usr/include/eigen3 
 
