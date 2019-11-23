@@ -148,13 +148,15 @@ namespace aid {
         constexpr double border_elevation = 0.35;
         constexpr int noiseScale = 5;
         constexpr int noiseHeight = 5;
-        constexpr int numPoints = 254;
+        constexpr int numPoints = 257;
 
         double getHeight(double x, double y, double minY, double minX, double width) {
             static siv::PerlinNoise noise(32);
             return noise.noise((x - minX) / width * noiseScale, (y - minY) / width * noiseScale) * noiseHeight +
                    noiseHeight;
         }
+
+
 
         std::stringstream writeStreet(
                 const LaneSection::BoundaryCurveTessellation &a,
@@ -226,6 +228,8 @@ namespace aid {
             res.open("./out/road.obj");
             std::ofstream res2;
             res2.open("./out/terrain.obj");
+            std::ofstream terrain;
+            terrain.open("./out/terrain.raw", std::ios::out | std::ios::binary);
 
 
             double minX = std::numeric_limits<double>::infinity();
@@ -345,11 +349,15 @@ namespace aid {
 
             res2 << "o terrain" << std::endl;
 
+
             for (int c = 0; c < numPoints; c++) {
                 for (int r = 0; r < numPoints; r++) {
-                    int x = minX + c * delta;
-                    int y = minY + r * delta;
-                    res2 << "v " << x << " " << y << " " << getHeight(x, y, minX, minY, width) << std::endl;
+                    double x = minX + c * delta;
+                    double y = minY + r * delta;
+                    double z = getHeight(x, y, minX, minY, width);
+                    unsigned short z_discrete = static_cast<short>(z/(2*noiseHeight)*8192);
+                    terrain.write((char*)&z_discrete, sizeof(z_discrete));
+                    res2 << "v " << x << " " << y << " " << z << std::endl;
                 }
             }
 
@@ -364,6 +372,7 @@ namespace aid {
             }
             res.close();
             res2.close();
+            terrain.close();
             std::cout << "Finished writing file." << std::endl << std::flush;
         }
 
