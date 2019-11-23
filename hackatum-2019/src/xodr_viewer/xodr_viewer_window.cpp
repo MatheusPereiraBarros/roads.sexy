@@ -142,6 +142,7 @@ namespace aid {
         std::stringstream XodrViewerWindow::XodrView::getObjFile() {
             std::stringstream res;
             int seg_num = 0;
+            int offset = 0;
             // roads
             for (const Road &road : xodrMap_->roads()) {
                 const auto &laneSections = road.laneSections();
@@ -190,14 +191,22 @@ namespace aid {
                     size *= 2;
                     // triangles = road surface
                     for (int j = 1; j <= size -  2; j++) {
-                        res << "f " << j << " " << j + 1 << " " << j + 2 << std::endl;
+                        res << "f " << j + offset<< " " << j + 1 + offset
+                            << " " << j + 2 + offset<< std::endl;
                     }
                     // sides
                     for (int j = 1; j <= size -  2; j++) {
-                        res << "f " << j << " " << j + size << " " << j + 2 << " " << j + 2 + size << std::endl;
+                        res << "f " << j + offset<< " " << j + size + offset
+                            << " " << j + 2 + size + offset << " "
+                            << j + 2 + offset << std::endl;
                     }
-                    res << "f " << 1 << " " << 1 + size << " " << 2 << " " << 2 + size << std::endl;
-                    res << "f " << size << " " << size + size << " " << size - 1 << " " << size + size - 1 << std::endl;
+                    res << "f " << 1 + offset<< " " << 1 + size + offset<< " "
+                        << 2 + size + offset << " " << 2 + offset << std::endl;
+
+                    res << "f " << size + offset<< " " << size + size + offset
+                        << " " << size + size - 1 + offset<< " "
+                        << size - 1 + offset << std::endl;
+                    offset += size * 2;
                 }
             }
             return res;
@@ -275,6 +284,42 @@ namespace aid {
                     painter.setPen(QPen(Qt::green, 3, Qt::SolidLine, Qt::RoundCap));
                     painter.drawPolyline(rightPoints);
                     painter.drawPolyline(leftPoints);
+
+
+                    // draw sidewalks
+                    // roads
+                    for (const Road &road : xodrMap_->roads()) {
+                        const auto &laneSections = road.laneSections();
+
+                        // find left and rig
+
+                        // road section
+                        for (int laneSectionIdx = 0; laneSectionIdx < (int) laneSections.size(); laneSectionIdx++) {
+                            const LaneSection &laneSection = laneSections[laneSectionIdx];
+
+                            auto refLineTessellation = road.referenceLine().tessellate(laneSection.startS(),
+                                                                                       laneSection.endS());
+                            auto boundaries = laneSection.tessellateLaneBoundaryCurves(refLineTessellation);
+                            const auto &lanes = laneSection.lanes();
+
+                            // lanes
+                            // Find first and last lane
+
+                            for (size_t i = 0; i < boundaries.size(); i++) {
+                                const LaneSection::BoundaryCurveTessellation &boundary = boundaries[i];
+                                if (lanes[i].type() == LaneType::SIDEWALK) {
+                                  QVector <QPointF> sidePoints;
+                                  for (Eigen::Vector2d pt : boundary.vertices_) {
+                                      sidePoints.append(pointMapToView(pt));
+                                  }
+                                  painter.setPen(QPen(Qt::magenta, 3, Qt::SolidLine, Qt::RoundCap));
+                                  painter.drawPolyline(sidePoints);
+                                }
+                            }
+                          }
+                        }
+
+
 //
 //
 //                    for (size_t i = 0; i < boundaries.size(); i++) {
