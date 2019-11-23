@@ -87,3 +87,4 @@ CTestTestfile.cmake
 *.out
 *.app
 
+.idea/
