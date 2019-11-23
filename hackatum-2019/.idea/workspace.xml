@@ -12,13 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="879b6ea1-e65d-48ac-8296-b4b9953786c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/xodr_viewer/perlin_noise.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/roads.sexy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/xodr_viewer/CMakeFiles/xodr_viewer.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build/xodr_viewer/CMakeFiles/xodr_viewer.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/xodr_viewer/CMakeFiles/xodr_viewer.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/build/xodr_viewer/CMakeFiles/xodr_viewer.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/xodr_viewer/CMakeFiles/xodr_viewer.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/xodr_viewer/CMakeFiles/xodr_viewer.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/xodr_viewer/xodr_viewer" beforeDir="false" afterPath="$PROJECT_DIR$/build/xodr_viewer/xodr_viewer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/0.obj" beforeDir="false" afterPath="$PROJECT_DIR$/out/0.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -36,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="161" column="36" selection-start-line="161" selection-start-column="36" selection-end-line="161" selection-end-column="36" />
+            <state relative-caret-position="541">
+              <caret line="345" column="17" lean-forward="true" selection-start-line="345" selection-start-column="17" selection-end-line="345" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -171,7 +170,7 @@
       <updated>1574505762675</updated>
       <workItem from="1574505764170" duration="3511000" />
       <workItem from="1574511073433" duration="1192000" />
-      <workItem from="1574512442962" duration="4980000" />
+      <workItem from="1574512442962" duration="6116000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <created>1574506967577</created>
@@ -191,7 +190,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9683000" />
+    <option name="totallyTimeSpent" value="10819000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="41" width="2560" height="1399" extended-state="6" />
@@ -209,7 +208,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.2539159" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49879614" visible="true" weight="0.32563892" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49879614" visible="true" weight="0.30750206" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50120384" side_tool="true" weight="0.26380873" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4995987" weight="0.58615005" />
       <window_info anchor="bottom" id="CMake" order="12" />
@@ -300,8 +299,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="161" column="36" selection-start-line="161" selection-start-column="36" selection-end-line="161" selection-end-column="36" />
+        <state relative-caret-position="541">
+          <caret line="345" column="17" lean-forward="true" selection-start-line="345" selection-start-column="17" selection-end-line="345" selection-end-column="17" />
         </state>
       </provider>
     </entry>

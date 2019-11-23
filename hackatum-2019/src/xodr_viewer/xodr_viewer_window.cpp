@@ -341,8 +341,8 @@ namespace aid {
                     int startNum = 1 + c + r * numPoints;
                     res2 << "f " << startNum << " " << startNum + numPoints << " "
                          << startNum + numPoints + 1 << std::endl;
-                    res2 << "f " << startNum << " " << startNum + 1 << " "
-                         << startNum + numPoints + 1 << std::endl;
+                    res2 << "f " << startNum << " " << startNum + numPoints + 1 << " "
+                         << startNum + 1 << std::endl;
                 }
             }
             res.close();
