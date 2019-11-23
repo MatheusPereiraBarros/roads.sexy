@@ -20,7 +20,7 @@
 namespace aid {
     namespace xodr {
 
-        static constexpr float DRAW_SCALE = 8 * 4;
+        static constexpr float DRAW_SCALE = 6 * 2;
         static constexpr float DRAW_MARGIN = 200;
 
         struct XodrFileInfo {
@@ -143,12 +143,20 @@ namespace aid {
 
 
         constexpr double padding = 10;
-        constexpr double driving_elevation = 0.1;
-        constexpr double sidewalk_elevation = 0.3;
-        constexpr double border_elevation = 0.35;
+        constexpr double driving_elevation = 0.2;
+        constexpr double sidewalk_elevation = 0.4;
+        constexpr double border_elevation = 0.45;
+
+        constexpr double road_markings_shift = 0.2;
+        constexpr double road_markings_width = 0.25;
+        constexpr double road_markings_elevation = 3;
+        constexpr int road_markings_stripe_length = 3;
+        constexpr int road_markings_stripe_distance = 3;
+
         constexpr int noiseScale = 5;
         constexpr int noiseHeight = 5;
         constexpr int numPoints = 257;
+
 
         double getHeight(double x, double y, double minY, double minX, double width) {
             static siv::PerlinNoise noise(32);
@@ -156,7 +164,21 @@ namespace aid {
                    noiseHeight;
         }
 
+        LaneSection::BoundaryCurveTessellation shift(
+                const LaneSection::BoundaryCurveTessellation &original,
+                const LaneSection::BoundaryCurveTessellation &ref,
+                double shift,
+                int from = 0, int to = -1) {
 
+            std::vector<Eigen::Vector2d> shifted_vertices;
+            if (to == -1) to = original.vertices_.size();
+            for (int i = 0; i < original.vertices_.size(); i++) {
+                Eigen::Vector2d pt_orig = original.vertices_[i];
+                Eigen::Vector2d pt_ref = ref.vertices_[i];
+                shifted_vertices.push_back((pt_ref - pt_orig).normalized() * shift + pt_orig);
+            }
+            return LaneSection::BoundaryCurveTessellation{std::move(shifted_vertices)};
+        }
 
         std::stringstream writeStreet(
                 const LaneSection::BoundaryCurveTessellation &a,
@@ -238,11 +260,11 @@ namespace aid {
             double maxY = std::numeric_limits<double>::lowest();
 
             struct DrawLane {
-                const Road *r;
-                int lane_section_index;
-                int left_boundary_index;
+                LaneSection::BoundaryCurveTessellation left;
+                LaneSection::BoundaryCurveTessellation right;
                 double elevation;
             };
+
             std::vector<DrawLane> lanes_to_draw;
 
             // roads
@@ -261,12 +283,33 @@ namespace aid {
                     const auto &lanes = laneSection.lanes();
 
                     for (size_t i = 0; i < boundaries.size() - 1; i++) {
-                        const LaneSection::BoundaryCurveTessellation &boundarya = boundaries[i];
-                        const LaneSection::BoundaryCurveTessellation &boundaryb = boundaries[i + 1];
+                        const LaneSection::BoundaryCurveTessellation &left = boundaries[i];
+                        const LaneSection::BoundaryCurveTessellation &right = boundaries[i + 1];
 
                         double elevation;
                         if (lanes[i].type() == LaneType::DRIVING) {
                             elevation = driving_elevation;
+                            if (i > 0 && (lanes[i - 1].type() == LaneType::BORDER ||
+                                          lanes[i - 1].type() == LaneType::SHOULDER) &&
+                                (i < 2 || lanes[i - 2].type() == LaneType::SIDEWALK)) {
+                                // Shift right of i
+                                auto l = shift(left, right, road_markings_shift);
+                                auto r = shift(left, right, road_markings_shift + road_markings_width);
+                                DrawLane drawLane{std::move(l), std::move(r), road_markings_elevation};
+                                lanes_to_draw.push_back(drawLane);
+                            } else if ((lanes[i + 1].type() == LaneType::BORDER ||
+                                        lanes[i + 1].type() == LaneType::SHOULDER) &&
+                                       (i > boundaries.size() - 2 || lanes[i + 2].type() == LaneType::SIDEWALK)) {
+                                auto l = shift(right, left, road_markings_shift);
+                                auto r = shift(right, left, road_markings_shift + road_markings_width);
+                                DrawLane drawLane{std::move(l), std::move(r), road_markings_elevation};
+                                lanes_to_draw.push_back(drawLane);
+                            } else if (i > 0 && lanes[i - 1].type() == LaneType::DRIVING) {
+                                auto l = shift(left, right, road_markings_width / 2);
+                                auto r = shift(left, right, -road_markings_width / 2);
+                                DrawLane drawLane{std::move(l), std::move(r), road_markings_elevation};
+                                lanes_to_draw.push_back(drawLane);
+                            }
                         } else if (lanes[i].type() == LaneType::SIDEWALK) {
                             elevation = sidewalk_elevation;
                         } else if (lanes[i].type() == LaneType::BORDER) {
@@ -278,11 +321,11 @@ namespace aid {
                         } else {
                             continue;
                         }
-                        DrawLane drawLane{&road, laneSectionIdx, i, elevation};
+                        DrawLane drawLane{left, right, elevation};
                         lanes_to_draw.push_back(std::move(drawLane));
-                        for (int j = 0; j < boundarya.vertices_.size(); j++) {
-                            Eigen::Vector2d ptl = boundarya.vertices_[j];
-                            Eigen::Vector2d ptlr = boundaryb.vertices_[j];
+                        for (int j = 0; j < left.vertices_.size(); j++) {
+                            Eigen::Vector2d ptl = left.vertices_[j];
+                            Eigen::Vector2d ptlr = right.vertices_[j];
                             minX = std::min(minX, ptl.x());
                             maxX = std::max(maxX, ptl.x());
                             minY = std::min(minY, ptl.y());
@@ -314,66 +357,84 @@ namespace aid {
                 width = deltaY + 2 * padding;
             }
 
-            minX -= padding;
-            maxX += padding;
-            minY -= padding;
-            maxY += padding;
+            minX -=
+                    padding;
+            maxX +=
+                    padding;
+            minY -=
+                    padding;
+            maxY +=
+                    padding;
 
 
-
-
-            // roads
+// roads
             int index_offset = 0;
-            for (const DrawLane &drawLane : lanes_to_draw) {
-                const auto &laneSections = drawLane.r->laneSections();
-
-                const LaneSection &laneSection = laneSections[drawLane.lane_section_index];
-
-                auto refLineTessellation = drawLane.r->referenceLine().tessellate(laneSection.startS(),
-                                                                                  laneSection.endS());
-                auto boundaries = laneSection.tessellateLaneBoundaryCurves(refLineTessellation);
-                const auto &lanes = laneSection.lanes();
-
-                const LaneSection::BoundaryCurveTessellation &leftBoundary = boundaries[drawLane.left_boundary_index];
-                const LaneSection::BoundaryCurveTessellation &rightBoundary = boundaries[drawLane.left_boundary_index +
-                                                                                         1];
+            for (
+                const DrawLane &drawLane
+                    : lanes_to_draw) {
                 std::stringstream write =
-                        writeStreet(leftBoundary,
-                                    rightBoundary, minY, minX, width, index_offset, drawLane.elevation);
-                res << write.rdbuf();
+                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, index_offset, drawLane.elevation);
+                res << write.
+
+                        rdbuf();
+
             }
 
 
             double delta = width / (numPoints - 1);
 
 
-            res2 << "o terrain" << std::endl;
+            res2 << "o terrain" <<
+                 std::endl;
 
 
-            for (int c = 0; c < numPoints; c++) {
-                for (int r = 0; r < numPoints; r++) {
+            for (
+                    int c = 0;
+                    c < numPoints;
+                    c++) {
+                for (
+                        int r = 0;
+                        r < numPoints;
+                        r++) {
                     double x = minX + c * delta;
                     double y = minY + r * delta;
                     double z = getHeight(x, y, minX, minY, width);
-                    unsigned short z_discrete = static_cast<short>(z/(2*noiseHeight)*8192);
-                    terrain.write((char*)&z_discrete, sizeof(z_discrete));
-                    res2 << "v " << x << " " << y << " " << z << std::endl;
+                    unsigned short z_discrete = static_cast<short>(z / (2 * noiseHeight) * 8192);
+                    terrain.write((char *) &z_discrete, sizeof(z_discrete));
+                    res2 << "v " << x << " " << y << " " << z <<
+                         std::endl;
                 }
             }
 
-            for (int c = 0; c < numPoints - 1; c++) {
-                for (int r = 0; r < numPoints - 1; r++) {
+            for (
+                    int c = 0;
+                    c < numPoints - 1; c++) {
+                for (
+                        int r = 0;
+                        r < numPoints - 1; r++) {
                     int startNum = 1 + c + r * numPoints;
                     res2 << "f " << startNum << " " << startNum + numPoints + 1 << " "
-                         << startNum + numPoints << std::endl;
+                         << startNum + numPoints <<
+                         std::endl;
                     res2 << "f " << startNum << " " << startNum + 1 << " "
-                         << startNum + numPoints + 1 << std::endl;
+                         << startNum + numPoints + 1 <<
+                         std::endl;
                 }
             }
-            res.close();
-            res2.close();
-            terrain.close();
-            std::cout << "Finished writing file." << std::endl << std::flush;
+            res.
+
+                    close();
+
+            res2.
+
+                    close();
+
+            terrain.
+
+                    close();
+
+            std::cout << "Finished writing file." << std::endl <<
+                      std::flush;
         }
 
         void XodrViewerWindow::XodrView::paintEvent(QPaintEvent *) {
@@ -403,6 +464,8 @@ namespace aid {
                             painter.setPen(QPen(Qt::cyan, 4, Qt::SolidLine, Qt::RoundCap));
                         } else if (lanes[i].type() == LaneType::NONE) {
                             painter.setPen(QPen(Qt::red, 4, Qt::SolidLine, Qt::RoundCap));
+                        } else if (lanes[i].type() == LaneType::SHOULDER) {
+                            painter.setPen(QPen(Qt::magenta, 4, Qt::SolidLine, Qt::RoundCap));
                         } else {
                             painter.setPen(QPen(Qt::lightGray, 1, Qt::SolidLine, Qt::RoundCap));
                         }

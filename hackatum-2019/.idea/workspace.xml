@@ -14,7 +14,6 @@
     <list default="true" id="879b6ea1-e65d-48ac-8296-b4b9953786c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/build/xodr_viewer/xodr_viewer" beforeDir="false" afterPath="$PROJECT_DIR$/build/xodr_viewer/xodr_viewer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/road.obj" beforeDir="false" afterPath="$PROJECT_DIR$/out/road.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/terrain.obj" beforeDir="false" afterPath="$PROJECT_DIR$/out/terrain.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -32,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="166" selection-start-line="166" selection-end-line="166" />
+            <state relative-caret-position="337">
+              <caret line="151" column="53" selection-start-line="151" selection-start-column="53" selection-end-line="151" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -79,6 +78,10 @@
       <find>border_</find>
       <find>z =</find>
       <find>z_di</find>
+      <find>BoundaryCurveTessellation</find>
+      <find>boundaryb</find>
+      <find>writeStreet</find>
+      <find>road_markings_witdh</find>
     </findStrings>
     <replaceStrings>
       <replace>index_offset</replace>
@@ -187,7 +190,7 @@
       <updated>1574505762675</updated>
       <workItem from="1574505764170" duration="3511000" />
       <workItem from="1574511073433" duration="1192000" />
-      <workItem from="1574512442962" duration="19251000" />
+      <workItem from="1574512442962" duration="24922000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <created>1574506967577</created>
@@ -207,7 +210,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23954000" />
+    <option name="totallyTimeSpent" value="29625000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="41" width="2560" height="1399" extended-state="6" />
@@ -351,8 +354,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="166" selection-start-line="166" selection-end-line="166" />
+        <state relative-caret-position="337">
+          <caret line="151" column="53" selection-start-line="151" selection-start-column="53" selection-end-line="151" selection-end-column="53" />
         </state>
       </provider>
     </entry>
