@@ -6,5 +6,5 @@ CXX_FLAGS =   -fPIC -std=gnu++11
 
 CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
 
-CXX_INCLUDES = -I/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr_viewer/.. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/eigen3 
+CXX_INCLUDES = -I/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr_viewer/.. -isystem /home/walter/anaconda3/include/qt -isystem /home/walter/anaconda3/include/qt/QtWidgets -isystem /home/walter/anaconda3/include/qt/QtGui -isystem /home/walter/anaconda3/include/qt/QtCore -isystem /home/walter/anaconda3/./mkspecs/linux-g++ -isystem /usr/include/eigen3 
 

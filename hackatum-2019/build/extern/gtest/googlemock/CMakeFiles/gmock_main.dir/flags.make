@@ -6,5 +6,5 @@ CXX_FLAGS =   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREA
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/extern/gtest/googlemock/include -isystem /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/extern/gtest/googlemock -isystem /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/extern/gtest/googletest/include -isystem /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/extern/gtest/googletest 
+CXX_INCLUDES = -isystem /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/extern/gtest/googlemock/include -isystem /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/extern/gtest/googlemock -isystem /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/extern/gtest/googletest/include -isystem /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/extern/gtest/googletest 
 

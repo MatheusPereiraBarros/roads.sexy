@@ -8,6 +8,9 @@
 #include <QtWidgets/QScrollArea>
 #include <iosfwd>
 
+#include <string>
+#include <fstream>
+
 #include "bounding_rect.h"
 #include "xodr/xodr_map.h"
 
@@ -184,16 +187,17 @@ namespace aid {
                         res << "v " << ptl.x() << " " << ptl.y() << " 0" << std::endl;
                         res << "v " << ptlr.x() << " " << ptlr.y() << " 0" << std::endl;
                     }
+                    size *= 2;
                     // triangles = road surface
                     for (int j = 1; j <= size -  2; j++) {
                         res << "f " << j << " " << j + 1 << " " << j + 2 << std::endl;
                     }
                     // sides
-                    for (int j = 1; j <= size -  1; j++) {
-                        res << "f " << j << " " << j + size*2 << " " << j + 2 << " " << j + 2 + size*2 << std::endl;
+                    for (int j = 1; j <= size -  2; j++) {
+                        res << "f " << j << " " << j + size << " " << j + 2 << " " << j + 2 + size << std::endl;
                     }
-                    res << "f " << 1 << " " << 1 + size*2 << " " << 2 << " " << 2 + size*2 << std::endl;
-                    res << "f " << size*2 << " " << size*2 + size*2 << " " << size*2 - 1 << " " << size*2 + size*2 - 1 << std::endl;
+                    res << "f " << 1 << " " << 1 + size << " " << 2 << " " << 2 + size << std::endl;
+                    res << "f " << size << " " << size + size << " " << size - 1 << " " << size + size - 1 << std::endl;
                 }
             }
             return res;
@@ -202,7 +206,15 @@ namespace aid {
         void XodrViewerWindow::XodrView::paintEvent(QPaintEvent *) {
             QPainter painter(this);
 
-            std::cout << getObjFile().rdbuf();
+            static int counter = 0;
+            std::ofstream file;
+            file.open("/home/walter/Documents/sandbox/roads.sexy/data/" + std::to_string(counter++) + ".obj");
+            if (file) {
+              file << getObjFile().rdbuf();
+
+              file.close();
+              std::cout << "print" << std::endl << std::flush;
+            }
 
             QVector <QPointF> allPoints;
 

@@ -1,26 +1,26 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles/CMakeTmp
+Change Dir: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b4a18/fast"
-make[1]: Entering directory '/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_b4a18.dir/build.make CMakeFiles/cmTC_b4a18.dir/build
-make[2]: Entering directory '/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b4a18.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_b4a18.dir/CheckSymbolExists.c.o   -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_b4a18
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b4a18.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_b4a18.dir/CheckSymbolExists.c.o  -o cmTC_b4a18 
-CMakeFiles/cmTC_b4a18.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_b2889/fast"
+make[1]: Entering directory '/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_b2889.dir/build.make CMakeFiles/cmTC_b2889.dir/build
+make[2]: Entering directory '/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b2889.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_b2889.dir/CheckSymbolExists.c.o   -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_b2889
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2889.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_b2889.dir/CheckSymbolExists.c.o  -o cmTC_b2889 
+CMakeFiles/cmTC_b2889.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_b4a18.dir/build.make:97: recipe for target 'cmTC_b4a18' failed
-make[2]: *** [cmTC_b4a18] Error 1
-make[2]: Leaving directory '/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_b4a18/fast' failed
-make[1]: *** [cmTC_b4a18/fast] Error 2
-make[1]: Leaving directory '/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles/CMakeTmp'
+CMakeFiles/cmTC_b2889.dir/build.make:97: recipe for target 'cmTC_b2889' failed
+make[2]: *** [cmTC_b2889] Error 1
+make[2]: Leaving directory '/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b2889/fast' failed
+make[1]: *** [cmTC_b2889/fast] Error 2
+make[1]: Leaving directory '/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles/CMakeTmp'
 
-File /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 

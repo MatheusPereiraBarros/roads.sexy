@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src
+CMAKE_SOURCE_DIR = /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build
+CMAKE_BINARY_DIR = /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build
 
 # Include any dependencies generated for this target.
 include xodr/CMakeFiles/xodr_tests.dir/depend.make
@@ -58,17 +58,17 @@ include xodr/CMakeFiles/xodr_tests.dir/progress.make
 include xodr/CMakeFiles/xodr_tests.dir/flags.make
 
 xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xml/test_xml_attribute_parsers.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xml/test_xml_attribute_parsers.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xml/test_xml_attribute_parsers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xml/test_xml_attribute_parsers.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xml/test_xml_attribute_parsers.cpp > CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xml/test_xml_attribute_parsers.cpp > CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xml/test_xml_attribute_parsers.cpp -o CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xml/test_xml_attribute_parsers.cpp -o CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.o.requires:
 
@@ -82,17 +82,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_attribute_parsers.cpp.o.provide
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xml/test_xml_child_element_parsers.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xml/test_xml_child_element_parsers.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xml/test_xml_child_element_parsers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xml/test_xml_child_element_parsers.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xml/test_xml_child_element_parsers.cpp > CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xml/test_xml_child_element_parsers.cpp > CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xml/test_xml_child_element_parsers.cpp -o CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xml/test_xml_child_element_parsers.cpp -o CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.o.requires:
 
@@ -106,17 +106,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_child_element_parsers.cpp.o.pro
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xml/test_xml_reader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xml/test_xml_reader.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xml/test_xml_reader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xml/test_xml_reader.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xml/test_xml_reader.cpp > CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xml/test_xml_reader.cpp > CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xml/test_xml_reader.cpp -o CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xml/test_xml_reader.cpp -o CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.o.requires:
 
@@ -130,17 +130,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xml/test_xml_reader.cpp.o.provides.build: xo
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_junction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_junction.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_junction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_junction.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_junction.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_junction.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_junction.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_junction.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.o.requires:
 
@@ -154,17 +154,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_junction.cpp.o.provides.build: xod
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_lane_attributes.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_lane_attributes.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_lane_attributes.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_lane_attributes.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_lane_attributes.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_lane_attributes.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_lane_attributes.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_lane_attributes.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.o.requires:
 
@@ -178,17 +178,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_attributes.cpp.o.provides.bui
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_lane_section.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_lane_section.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_lane_section.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_lane_section.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_lane_section.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_lane_section.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_lane_section.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_lane_section.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.o.requires:
 
@@ -202,17 +202,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_lane_section.cpp.o.provides.build:
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_junction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_junction.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_junction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_junction.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_junction.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_junction.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_junction.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_junction.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.o.requires:
 
@@ -226,17 +226,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_junction.cpp.o.provides.buil
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_lane_section.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_lane_section.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_lane_section.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_lane_section.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_lane_section.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_lane_section.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_lane_section.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_lane_section.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.o.requires:
 
@@ -250,17 +250,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_lane_section.cpp.o.provides.
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_reference_line.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_reference_line.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_reference_line.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_reference_line.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_reference_line.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_reference_line.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_reference_line.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_reference_line.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.o.requires:
 
@@ -274,17 +274,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_reference_line.cpp.o.provide
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_road.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_road.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_road.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_road.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_road.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_road.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_road.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_road.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.o.requires:
 
@@ -298,17 +298,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road.cpp.o.provides.build: x
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_road_link.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_road_link.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_road_link.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_road_link.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_road_link.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_road_link.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_road_link.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_road_link.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.o.requires:
 
@@ -322,17 +322,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_link.cpp.o.provides.bui
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_road_object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_road_object.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_road_object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_road_object.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_road_object.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_road_object.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_parse_road_object.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_parse_road_object.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.o.requires:
 
@@ -346,17 +346,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_parse_road_object.cpp.o.provides.b
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_poly3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_poly3.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_poly3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_poly3.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_poly3.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_poly3.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_poly3.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_poly3.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.o.requires:
 
@@ -370,17 +370,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_poly3.cpp.o.provides.build: xodr/C
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_reference_line.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_reference_line.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_reference_line.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_reference_line.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_reference_line.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_reference_line.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_reference_line.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_reference_line.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.o.requires:
 
@@ -394,17 +394,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_reference_line.cpp.o.provides.buil
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_road.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_road.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_road.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_road.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_road.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_road.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_road.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_road.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.o.requires:
 
@@ -418,17 +418,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_road.cpp.o.provides.build: xodr/CM
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_xodr_map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_xodr_map.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_xodr_map.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_xodr_map.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_xodr_map.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_xodr_map.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_xodr_map.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_xodr_map.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.o.requires:
 
@@ -442,17 +442,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_map.cpp.o.provides.build: xod
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_xodr_object_reference.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_xodr_object_reference.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_xodr_object_reference.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_xodr_object_reference.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_xodr_object_reference.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_xodr_object_reference.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_xodr_object_reference.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_xodr_object_reference.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.o.requires:
 
@@ -466,17 +466,17 @@ xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_object_reference.cpp.o.provid
 
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.o: xodr/CMakeFiles/xodr_tests.dir/flags.make
-xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.o: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_xodr_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.o"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.o -c /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_xodr_utils.cpp
+xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.o: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_xodr_utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.o"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.o -c /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_xodr_utils.cpp
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.i"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_xodr_utils.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.i
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_xodr_utils.cpp > CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.i
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.s"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/test/xodr/test_xodr_utils.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.s
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr/test/xodr/test_xodr_utils.cpp -o CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.s
 
 xodr/CMakeFiles/xodr_tests.dir/test/xodr/test_xodr_utils.cpp.o.requires:
 
@@ -536,8 +536,8 @@ xodr/xodr_tests: xodr/libxodr.a
 xodr/xodr_tests: extern/gtest/googlemock/gtest/libgtest_main.a
 xodr/xodr_tests: extern/gtest/googlemock/gtest/libgtest.a
 xodr/xodr_tests: xodr/CMakeFiles/xodr_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable xodr_tests"
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/xodr_tests.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable xodr_tests"
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/xodr_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 xodr/CMakeFiles/xodr_tests.dir/build: xodr/xodr_tests
@@ -566,10 +566,10 @@ xodr/CMakeFiles/xodr_tests.dir/requires: xodr/CMakeFiles/xodr_tests.dir/test/xod
 .PHONY : xodr/CMakeFiles/xodr_tests.dir/requires
 
 xodr/CMakeFiles/xodr_tests.dir/clean:
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr && $(CMAKE_COMMAND) -P CMakeFiles/xodr_tests.dir/cmake_clean.cmake
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr && $(CMAKE_COMMAND) -P CMakeFiles/xodr_tests.dir/cmake_clean.cmake
 .PHONY : xodr/CMakeFiles/xodr_tests.dir/clean
 
 xodr/CMakeFiles/xodr_tests.dir/depend:
-	cd /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/xodr/CMakeFiles/xodr_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/xodr /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/xodr/CMakeFiles/xodr_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : xodr/CMakeFiles/xodr_tests.dir/depend
 

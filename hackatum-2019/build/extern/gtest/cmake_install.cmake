@@ -1,4 +1,4 @@
-# Install script for directory: /home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/extern/gtest
+# Install script for directory: /home/walter/Documents/sandbox/roads.sexy/hackatum-2019/src/extern/gtest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/build/extern/gtest/googlemock/cmake_install.cmake")
+  include("/home/walter/Documents/sandbox/roads.sexy/hackatum-2019/build/extern/gtest/googlemock/cmake_install.cmake")
 
 endif()
 
