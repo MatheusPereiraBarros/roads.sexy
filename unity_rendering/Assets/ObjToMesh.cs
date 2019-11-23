@@ -4,43 +4,116 @@ using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Random = System.Random;
 
 public sealed class ObjToMesh
 {
-    
     public ObjToMesh()
     {
-        
     }
 
-    public Mesh genMesh(String fileName)
+    public Mesh[] genMesh(String fileName)
     {
+        List<Mesh> sections = new List<Mesh>();
         String text = File.ReadAllText(fileName);
+        Debug.Log(text);
         String[] lines = text.Split('\n');
         List<Vector3> verts = new List<Vector3>();
         List<int> tris = new List<int>();
-        
+
         foreach (String line in lines)
         {
-            Debug.Log(line);
             String[] l = line.Split(' ');
+            char type = line.ToCharArray()[0];
+            switch (type)
+            {
+                case 'o':
+                    Debug.Log("Object Finished");
+                    // if there were previously scanned .obj files generate mesh
+                    if ((verts.Count > 0) && (tris.Count > 0))
+                    {
+                        Mesh myMesh = new Mesh();
+                        myMesh.vertices = verts.ToArray();
+                        myMesh.triangles = tris.ToArray();
 
-            if (l[0] == "v")
+                        Vector2[] uvs = new Vector2[verts.Count];
+
+                        
+                        
+                        for (int i = 0; i < uvs.Length; i++)
+                        {
+                            uvs[i] = new Vector2(verts[i].x, verts[i].z);
+                        }
+
+                        myMesh.uv = uvs;
+                        
+                        sections.Add(myMesh);
+
+                        verts.Clear();
+                        tris.Clear();
+                    }
+
+                    break;
+                case 'v':
+                    verts.Add(new Vector3(float.Parse(l[1]), float.Parse(l[2]), float.Parse(l[3])));
+                    break;
+                case 'f':
+                    if (l.Length == 4)
+                    {
+                        tris.Add(Int32.Parse(l[1])-1);
+                        tris.Add(Int32.Parse(l[2])-1);
+                        tris.Add(Int32.Parse(l[3])-1);
+                    }
+                    else if (l.Length == 5)
+                    {
+                        tris.Add(Int32.Parse(l[1])-1);
+                        tris.Add(Int32.Parse(l[2])-1);
+                        tris.Add(Int32.Parse(l[3])-1);
+                        tris.Add(Int32.Parse(l[4])-1);
+                    }
+
+                    break;
+            }
+
+            if (l[0] == "o")
             {
-                verts.Add(new Vector3(float.Parse(l[1]), float.Parse(l[2]), float.Parse(l[3])));
-            }else if (l[0] == "f")
+            }
+            else if (l[0] == "v")
             {
-                
-                tris.Add(Int32.Parse(l[1]));
-                tris.Add(Int32.Parse(l[2]));
-                tris.Add(Int32.Parse(l[3]));
+            }
+            else if (l[0] == "f")
+            {
             }
         }
-        
-        Mesh myMesh = new Mesh();
-        myMesh.vertices = verts.ToArray();
-        myMesh.triangles = tris.ToArray();
 
-        return myMesh;
+        return sections.ToArray();
+    }
+
+    public float getMaxX(Vector3[] arr)
+    {
+        float max = Int32.MinValue;
+        foreach (var v in arr)
+        {
+            if (v.x > max)
+            {
+                max = v.x;
+            }
+        }
+
+        return max;
+    }
+    
+    public float getMaxZ(Vector3[] arr)
+    {
+        float max = Int32.MinValue;
+        foreach (var v in arr)
+        {
+            if (v.z > max)
+            {
+                max = v.z;
+            }
+        }
+
+        return max;
     }
 }

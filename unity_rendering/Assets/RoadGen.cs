@@ -6,36 +6,37 @@ using UnityEngine.UI;
 
 public class RoadGen : MonoBehaviour
 {
-
     private void Start()
     {
         GenRoad();
     }
 
-    private void GenRoad()
+
+    private void GenTerrain()
     {
-        //Camera c  = Camera.main;
-        //c.enabled = true;
-        //Mesh mesh = FastObjImporter.Instance.ImportFile("C:\\Users\\elias\\Roads\\Assets\\square.obj");
-        //GameObject r = new GameObject("MyObject");
-        
+
         ObjToMesh o = new ObjToMesh();
-        Mesh importedMesh = o.genMesh("C:\\Users\\elias\\Roads\\Assets\\square.obj");
+        Mesh[] importedMesh = o.genMesh("D:\\roads.sexy\\unity_rendering\\Assets\\terrain.obj");
 
         // Mesh imported_mesh = FastObjImporter.Instance.ImportFile("C:\\Users\\elias\\Roads\\Assets\\square.obj");
-        Mesh mesh = new Mesh();
-        
-        mesh.Clear ();
-        mesh.vertices = importedMesh.vertices;
-        mesh.triangles = importedMesh.triangles;
-        mesh.RecalculateNormals();
 
+        Mesh m = importedMesh[0];
+
+        Mesh mesh = new Mesh();
+        mesh.Clear ();
+        mesh.vertices = m.vertices;
+        mesh.triangles = m.triangles;
+        mesh.RecalculateNormals();
+            
+            
         GameObject go = new GameObject();
         go.AddComponent<MeshFilter>();
         go.AddComponent<MeshRenderer>();
-        go.GetComponent<MeshFilter>().sharedMesh = mesh;
-        go.GetComponent<MeshRenderer>().material.SetTexture("_MainTexture", LoadPNG("C:\\Users\\elias\\Roads\\Assets\\asphalt.png"));
+        go.GetComponent<MeshFilter>().sharedMesh = m;
+            
 
+        
+        
 
         // Instantiate(go, Vector3.zero, Quaternion.identity);
 
@@ -58,6 +59,7 @@ public class RoadGen : MonoBehaviour
         //Instantiate(mesh, Vector3.zero, Quaternion.identity);
     }
 
+    /*
     public static Texture2D LoadPNG(string filePath)
     {
         Texture2D tex = null;
@@ -71,6 +73,7 @@ public class RoadGen : MonoBehaviour
 
         return tex;
     }
+    */
 
     private void Update()
     {
