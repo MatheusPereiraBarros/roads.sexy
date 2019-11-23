@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/matthias/Documents/roads.sexy/objCreator/hackatum-2019/src/xodr/odrSpiral/odrSpiral.c
+stdio.h
+-
+unistd.h
+-
+math.h
+-
+
