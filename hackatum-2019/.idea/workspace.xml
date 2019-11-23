@@ -12,8 +12,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="879b6ea1-e65d-48ac-8296-b4b9953786c3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/xodr_viewer/xodr_viewer" beforeDir="false" afterPath="$PROJECT_DIR$/build/xodr_viewer/xodr_viewer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/opendrive/CulDeSac.xodr" beforeDir="false" afterPath="$PROJECT_DIR$/data/opendrive/CulDeSac.xodr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/road.obj" beforeDir="false" afterPath="$PROJECT_DIR$/out/road.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/terrain.obj" beforeDir="false" afterPath="$PROJECT_DIR$/out/terrain.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/terrain.raw" beforeDir="false" afterPath="$PROJECT_DIR$/out/terrain.raw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -31,8 +37,40 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="151" column="53" selection-start-line="151" selection-start-column="53" selection-end-line="151" selection-end-column="53" />
+            <state relative-caret-position="447">
+              <caret line="419" column="24" selection-start-line="419" selection-start-column="24" selection-end-line="419" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/out/markings.obj">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/opendrive/Crossing8Course.xodr">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/opendrive/Town07.xodr">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="23" selection-end-line="25720" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/opendrive/CulDeSac.xodr">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="771">
+              <caret line="25720" selection-start-line="25720" selection-end-line="25720" />
             </state>
           </provider>
         </entry>
@@ -63,15 +101,12 @@
     <findStrings>
       <find>$PROJECT_DIR$/../../../../walter/Documents/sandbox/</find>
       <find>gtest</find>
-      <find>terrain</find>
-      <find>res</find>
       <find>print</find>
       <find>obj</find>
       <find>file2</find>
       <find>LaneType</find>
       <find>xodrMap_</find>
       <find>XodrMap</find>
-      <find>offset</find>
       <find>index_offset</find>
       <find>green</find>
       <find>BORDER</find>
@@ -82,9 +117,16 @@
       <find>boundaryb</find>
       <find>writeStreet</find>
       <find>road_markings_witdh</find>
+      <find>boarder</find>
+      <find>res2</find>
+      <find>res</find>
+      <find>terrain</find>
+      <find>offset</find>
     </findStrings>
     <replaceStrings>
       <replace>index_offset</replace>
+      <replace>terrain</replace>
+      <replace>streets</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -99,6 +141,7 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/xodr_viewer/perlin_noise.h" />
         <option value="$PROJECT_DIR$/src/xodr/lane_section.h" />
+        <option value="$PROJECT_DIR$/data/opendrive/CulDeSac.xodr" />
         <option value="$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp" />
       </list>
     </option>
@@ -122,6 +165,17 @@
             <path>
               <item name="hackatum-2019" type="b2602c69:ProjectViewProjectNode" />
               <item name="hackatum-2019" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hackatum-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hackatum-2019" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hackatum-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hackatum-2019" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="opendrive" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hackatum-2019" type="b2602c69:ProjectViewProjectNode" />
@@ -190,7 +244,7 @@
       <updated>1574505762675</updated>
       <workItem from="1574505764170" duration="3511000" />
       <workItem from="1574511073433" duration="1192000" />
-      <workItem from="1574512442962" duration="24922000" />
+      <workItem from="1574512442962" duration="27833000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <created>1574506967577</created>
@@ -210,13 +264,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29625000" />
+    <option name="totallyTimeSpent" value="32536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="41" width="2560" height="1399" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25642055" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25642055" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -228,7 +282,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.2539159" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49879614" visible="true" weight="0.2943116" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49879614" visible="true" weight="0.2943116" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50120384" side_tool="true" weight="0.26380873" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4995987" weight="0.28771642" />
       <window_info anchor="bottom" id="CMake" order="12" />
@@ -352,10 +406,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/opendrive/Crossing8Course.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/opendrive/Roundabout8Course.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/opendrive/Crossing8Course.xodr">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/opendrive/Town07.xodr">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="23" selection-end-line="25720" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/opendrive/CulDeSac.xodr">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="771">
+          <caret line="25720" selection-start-line="25720" selection-end-line="25720" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/markings.obj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="151" column="53" selection-start-line="151" selection-start-column="53" selection-end-line="151" selection-end-column="53" />
+        <state relative-caret-position="447">
+          <caret line="419" column="24" selection-start-line="419" selection-start-column="24" selection-end-line="419" selection-end-column="24" />
         </state>
       </provider>
     </entry>

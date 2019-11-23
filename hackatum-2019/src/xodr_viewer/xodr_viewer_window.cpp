@@ -149,7 +149,7 @@ namespace aid {
 
         constexpr double road_markings_shift = 0.2;
         constexpr double road_markings_width = 0.25;
-        constexpr double road_markings_elevation = 3;
+        constexpr double road_markings_elevation = 0.25;
         constexpr int road_markings_stripe_length = 3;
         constexpr int road_markings_stripe_distance = 3;
 
@@ -172,7 +172,7 @@ namespace aid {
 
             std::vector<Eigen::Vector2d> shifted_vertices;
             if (to == -1) to = original.vertices_.size();
-            for (int i = 0; i < original.vertices_.size(); i++) {
+            for (int i = from; i < to; i++) {
                 Eigen::Vector2d pt_orig = original.vertices_[i];
                 Eigen::Vector2d pt_ref = ref.vertices_[i];
                 shifted_vertices.push_back((pt_ref - pt_orig).normalized() * shift + pt_orig);
@@ -245,13 +245,28 @@ namespace aid {
 
         void XodrViewerWindow::XodrView::getObjFile() {
 
-            static int counter = 0;
-            std::ofstream res;
-            res.open("./out/road.obj");
-            std::ofstream res2;
-            res2.open("./out/terrain.obj");
+            int streets_off = 0;
+            std::ofstream streets;
+            streets.open("./out/streets.obj");
+
+            int sidewalk_off = 0;
+            std::ofstream sidewalk;
+            sidewalk.open("./out/sidewalk.obj");
+
+            int border_off = 0;
+            std::ofstream border;
+            border.open("./out/border.obj");
+
+            int markings_off = 0;
+            std::ofstream markings;
+            markings.open("./out/markings.obj");
+
+            int terrain_off = 0;
             std::ofstream terrain;
-            terrain.open("./out/terrain.raw", std::ios::out | std::ios::binary);
+            terrain.open("./out/terrain.obj");
+
+            std::ofstream terrain_hm;
+            terrain_hm.open("./out/terrain.raw", std::ios::out | std::ios::binary);
 
 
             double minX = std::numeric_limits<double>::infinity();
@@ -266,6 +281,10 @@ namespace aid {
             };
 
             std::vector<DrawLane> lanes_to_draw;
+            std::vector<DrawLane> lanes_to_draw_sidewalk;
+            std::vector<DrawLane> lanes_to_draw_boundary;
+            std::vector<DrawLane> lanes_to_draw_markings;
+
 
             // roads
             for (const Road &road : xodrMap_->roads()) {
@@ -286,9 +305,11 @@ namespace aid {
                         const LaneSection::BoundaryCurveTessellation &left = boundaries[i];
                         const LaneSection::BoundaryCurveTessellation &right = boundaries[i + 1];
 
-                        double elevation;
                         if (lanes[i].type() == LaneType::DRIVING) {
-                            elevation = driving_elevation;
+
+                            DrawLane drawLane{left, right, driving_elevation};
+                            lanes_to_draw.push_back(std::move(drawLane));
+
                             if (i > 0 && (lanes[i - 1].type() == LaneType::BORDER ||
                                           lanes[i - 1].type() == LaneType::SHOULDER) &&
                                 (i < 2 || lanes[i - 2].type() == LaneType::SIDEWALK)) {
@@ -296,33 +317,42 @@ namespace aid {
                                 auto l = shift(left, right, road_markings_shift);
                                 auto r = shift(left, right, road_markings_shift + road_markings_width);
                                 DrawLane drawLane{std::move(l), std::move(r), road_markings_elevation};
-                                lanes_to_draw.push_back(drawLane);
+                                lanes_to_draw_markings.push_back(drawLane);
                             } else if ((lanes[i + 1].type() == LaneType::BORDER ||
                                         lanes[i + 1].type() == LaneType::SHOULDER) &&
                                        (i > boundaries.size() - 2 || lanes[i + 2].type() == LaneType::SIDEWALK)) {
                                 auto l = shift(right, left, road_markings_shift);
                                 auto r = shift(right, left, road_markings_shift + road_markings_width);
                                 DrawLane drawLane{std::move(l), std::move(r), road_markings_elevation};
-                                lanes_to_draw.push_back(drawLane);
-                            } else if (i > 0 && lanes[i - 1].type() == LaneType::DRIVING) {
-                                auto l = shift(left, right, road_markings_width / 2);
-                                auto r = shift(left, right, -road_markings_width / 2);
-                                DrawLane drawLane{std::move(l), std::move(r), road_markings_elevation};
-                                lanes_to_draw.push_back(drawLane);
+                                lanes_to_draw_markings.push_back(drawLane);
+                            }
+                            if (i > 0 && lanes[i - 1].type() == LaneType::DRIVING) {
+                                for (int k = 0; k < left.vertices_.size() -
+                                                    road_markings_stripe_length; k += road_markings_stripe_length +
+                                                                                      road_markings_stripe_distance) {
+                                    auto l = shift(left, right, road_markings_width / 2, k,
+                                                   k + road_markings_stripe_length);
+                                    auto r = shift(left, right, -road_markings_width / 2, k,
+                                                   k + road_markings_stripe_length);
+                                    DrawLane drawLane{std::move(l), std::move(r), road_markings_elevation};
+                                    lanes_to_draw_markings.push_back(drawLane);
+                                }
+
                             }
                         } else if (lanes[i].type() == LaneType::SIDEWALK) {
-                            elevation = sidewalk_elevation;
+                            DrawLane drawLane{left, right, sidewalk_elevation};
+                            lanes_to_draw_sidewalk.push_back(std::move(drawLane));
                         } else if (lanes[i].type() == LaneType::BORDER) {
                             if ((i < 1 || lanes[i - 1].type() != LaneType::SIDEWALK) &&
                                 (i > boundaries.size() - 1 || lanes[i + 1].type() != LaneType::SIDEWALK)) {
                                 continue;
                             }
-                            elevation = border_elevation;
+                            DrawLane drawLane{left, right, border_elevation};
+                            lanes_to_draw_boundary.push_back(std::move(drawLane));
                         } else {
                             continue;
                         }
-                        DrawLane drawLane{left, right, elevation};
-                        lanes_to_draw.push_back(std::move(drawLane));
+
                         for (int j = 0; j < left.vertices_.size(); j++) {
                             Eigen::Vector2d ptl = left.vertices_[j];
                             Eigen::Vector2d ptlr = right.vertices_[j];
@@ -368,23 +398,33 @@ namespace aid {
 
 
 // roads
-            int index_offset = 0;
-            for (
-                const DrawLane &drawLane
-                    : lanes_to_draw) {
+
+            for (const DrawLane &drawLane: lanes_to_draw) {
                 std::stringstream write =
-                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, index_offset, drawLane.elevation);
-                res << write.
-
-                        rdbuf();
-
+                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, streets_off, drawLane.elevation);
+                streets << write.rdbuf();
+            }
+            for (const DrawLane &drawLane: lanes_to_draw_boundary) {
+                std::stringstream write =
+                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, border_off, drawLane.elevation);
+                border << write.rdbuf();
+            }
+            for (const DrawLane &drawLane: lanes_to_draw_markings) {
+                std::stringstream write =
+                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, markings_off, drawLane.elevation);
+                markings << write.rdbuf();
+            }
+            for (const DrawLane &drawLane: lanes_to_draw_sidewalk) {
+                std::stringstream write =
+                        writeStreet(drawLane.left, drawLane.right, minY, minX, width, sidewalk_off, drawLane.elevation);
+                sidewalk << write.rdbuf();
             }
 
 
             double delta = width / (numPoints - 1);
 
 
-            res2 << "o terrain" <<
+            terrain << "o terrain" <<
                  std::endl;
 
 
@@ -400,8 +440,8 @@ namespace aid {
                     double y = minY + r * delta;
                     double z = getHeight(x, y, minX, minY, width);
                     unsigned short z_discrete = static_cast<short>(z / (2 * noiseHeight) * 8192);
-                    terrain.write((char *) &z_discrete, sizeof(z_discrete));
-                    res2 << "v " << x << " " << y << " " << z <<
+                    terrain_hm.write((char *) &z_discrete, sizeof(z_discrete));
+                    terrain << "v " << x << " " << y << " " << z <<
                          std::endl;
                 }
             }
@@ -413,25 +453,20 @@ namespace aid {
                         int r = 0;
                         r < numPoints - 1; r++) {
                     int startNum = 1 + c + r * numPoints;
-                    res2 << "f " << startNum << " " << startNum + numPoints + 1 << " "
+                    terrain << "f " << startNum << " " << startNum + numPoints + 1 << " "
                          << startNum + numPoints <<
                          std::endl;
-                    res2 << "f " << startNum << " " << startNum + 1 << " "
+                    terrain << "f " << startNum << " " << startNum + 1 << " "
                          << startNum + numPoints + 1 <<
                          std::endl;
                 }
             }
-            res.
-
-                    close();
-
-            res2.
-
-                    close();
-
-            terrain.
-
-                    close();
+            streets.close();
+            border.close();
+            sidewalk.close();
+            markings.close();
+            terrain.close();
+            terrain_hm.close();
 
             std::cout << "Finished writing file." << std::endl <<
                       std::flush;
