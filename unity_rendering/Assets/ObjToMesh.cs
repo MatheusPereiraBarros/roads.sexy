@@ -12,7 +12,7 @@ public sealed class ObjToMesh
     {
     }
 
-    public Mesh[] genMesh(String fileName)
+    public Mesh genMesh(String fileName)
     {
         List<Mesh> sections = new List<Mesh>();
         String text = File.ReadAllText(fileName);
@@ -28,31 +28,7 @@ public sealed class ObjToMesh
             switch (type)
             {
                 case 'o':
-                    Debug.Log("Object Finished");
-                    // if there were previously scanned .obj files generate mesh
-                    if ((verts.Count > 0) && (tris.Count > 0))
-                    {
-                        Mesh myMesh = new Mesh();
-                        myMesh.vertices = verts.ToArray();
-                        myMesh.triangles = tris.ToArray();
-
-                        Vector2[] uvs = new Vector2[verts.Count];
-
-                        
-                        
-                        for (int i = 0; i < uvs.Length; i++)
-                        {
-                            uvs[i] = new Vector2(verts[i].x, verts[i].z);
-                        }
-
-                        myMesh.uv = uvs;
-                        
-                        sections.Add(myMesh);
-
-                        verts.Clear();
-                        tris.Clear();
-                    }
-
+                    
                     break;
                 case 'v':
                     verts.Add(new Vector3(float.Parse(l[1]), float.Parse(l[3]), float.Parse(l[2])));
@@ -60,16 +36,9 @@ public sealed class ObjToMesh
                 case 'f':
                     if (l.Length == 4)
                     {
-                        tris.Add(Int32.Parse(l[1])-1);
-                        tris.Add(Int32.Parse(l[2])-1);
-                        tris.Add(Int32.Parse(l[3])-1);
-                    }
-                    else if (l.Length == 5)
-                    {
-                        tris.Add(Int32.Parse(l[1])-1);
-                        tris.Add(Int32.Parse(l[2])-1);
-                        tris.Add(Int32.Parse(l[3])-1);
-                        tris.Add(Int32.Parse(l[4])-1);
+                        tris.Add(Int32.Parse(l[1]) - 1);
+                        tris.Add(Int32.Parse(l[2]) - 1);
+                        tris.Add(Int32.Parse(l[3]) - 1);
                     }
 
                     break;
@@ -85,8 +54,27 @@ public sealed class ObjToMesh
             {
             }
         }
+        
+        Mesh myMesh = new Mesh();
+        myMesh.vertices = verts.ToArray();
+        myMesh.triangles = tris.ToArray();
 
-        return sections.ToArray();
+        Vector2[] uvs = new Vector2[verts.Count];
+
+                        
+                        
+        for (int i = 0; i < uvs.Length; i++)
+        {
+            uvs[i] = new Vector2(verts[i].x, verts[i].z);
+        }
+
+        myMesh.uv = uvs;
+        
+
+        verts.Clear();
+        tris.Clear();
+
+        return myMesh;
     }
 
     public float getMaxX(Vector3[] arr)

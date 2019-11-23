@@ -9,7 +9,29 @@ public class RoadGen : MonoBehaviour
 {
     private void Start()
     {
-        GenTerrain();
+        //GenTerrain();
+        GenRoad();
+    }
+
+    private void GenRoad()
+    {
+        ObjToMesh o = new ObjToMesh();
+        Mesh importedMesh = o.genMesh("D:\\roads.sexy\\unity_rendering\\Assets\\road.obj");
+
+        Mesh m = importedMesh;
+
+        Mesh mesh = new Mesh();
+        mesh.Clear ();
+        mesh.vertices = m.vertices;
+        mesh.triangles = m.triangles;
+        mesh.RecalculateNormals();
+
+
+        GameObject go = new GameObject();
+        go.AddComponent<MeshFilter>();
+        go.AddComponent<MeshRenderer>();
+        go.GetComponent<MeshFilter>().sharedMesh = m;
+        go.GetComponent<MeshRenderer>().material.mainTexture = Resources.Load("asphalt") as Texture;
     }
 
 
@@ -17,9 +39,9 @@ public class RoadGen : MonoBehaviour
     {
 
         ObjToMesh o = new ObjToMesh();
-        Mesh[] importedMesh = o.genMesh("D:\\roads.sexy\\unity_rendering\\Assets\\terrain.obj");
+        Mesh importedMesh = o.genMesh("D:\\roads.sexy\\unity_rendering\\Assets\\terrain.obj");
 
-        Mesh m = importedMesh[0];
+        Mesh m = importedMesh;
 
         Mesh mesh = new Mesh();
         mesh.Clear ();
