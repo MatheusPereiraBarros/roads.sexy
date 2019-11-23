@@ -55,7 +55,7 @@ public sealed class ObjToMesh
 
                     break;
                 case 'v':
-                    verts.Add(new Vector3(float.Parse(l[1]), float.Parse(l[2]), float.Parse(l[3])));
+                    verts.Add(new Vector3(float.Parse(l[1]), float.Parse(l[3]), float.Parse(l[2])));
                     break;
                 case 'f':
                     if (l.Length == 4)
@@ -103,6 +103,20 @@ public sealed class ObjToMesh
         return max;
     }
     
+    public float getMaxY(Vector3[] arr)
+    {
+        float max = Int32.MinValue;
+        foreach (var v in arr)
+        {
+            if (v.y > max)
+            {
+                max = v.y;
+            }
+        }
+
+        return max;
+    }
+    
     public float getMaxZ(Vector3[] arr)
     {
         float max = Int32.MinValue;
@@ -115,5 +129,47 @@ public sealed class ObjToMesh
         }
 
         return max;
+    }
+    
+    public float getMinX(Vector3[] arr)
+    {
+        float min = Int32.MaxValue;
+        foreach (var v in arr)
+        {
+            if (v.z < min)
+            {
+                min = v.z;
+            }
+        }
+
+        return min;
+    }
+    
+    public float getMinY(Vector3[] arr)
+    {
+        float min = Int32.MaxValue;
+        foreach (var v in arr)
+        {
+            if (v.y > min)
+            {
+                min = v.y;
+            }
+        }
+
+        return min;
+    }
+    
+    public float getMinZ(Vector3[] arr)
+    {
+        float min = Int32.MaxValue;
+        foreach (var v in arr)
+        {
+            if (v.z > min)
+            {
+                min = v.z;
+            }
+        }
+
+        return min;
     }
 }
