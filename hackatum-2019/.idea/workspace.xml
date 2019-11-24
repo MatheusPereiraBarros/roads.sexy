@@ -13,13 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="879b6ea1-e65d-48ac-8296-b4b9953786c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/xodr_viewer/xodr_viewer" beforeDir="false" afterPath="$PROJECT_DIR$/build/xodr_viewer/xodr_viewer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/all.obj" beforeDir="false" afterPath="$PROJECT_DIR$/out/all.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/border.obj" beforeDir="false" afterPath="$PROJECT_DIR$/out/border.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/markings.obj" beforeDir="false" afterPath="$PROJECT_DIR$/out/markings.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/sidewalk.obj" beforeDir="false" afterPath="$PROJECT_DIR$/out/sidewalk.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/streets.obj" beforeDir="false" afterPath="$PROJECT_DIR$/out/streets.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/terrain.obj" beforeDir="false" afterPath="$PROJECT_DIR$/out/terrain.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -37,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="343" column="64" selection-start-line="343" selection-start-column="64" selection-end-line="343" selection-end-column="64" />
+            <state relative-caret-position="292">
+              <caret line="256" column="54" selection-start-line="256" selection-start-column="54" selection-end-line="256" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -94,7 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$PROJECT_DIR$/../../../../walter/Documents/sandbox/</find>
       <find>gtest</find>
       <find>print</find>
       <find>obj</find>
@@ -124,6 +116,7 @@
       <find>padd</find>
       <find>padding</find>
       <find>terr</find>
+      <find>file</find>
     </findStrings>
     <replaceStrings>
       <replace>index_offset</replace>
@@ -243,7 +236,7 @@
       <workItem from="1574511073433" duration="1192000" />
       <workItem from="1574512442962" duration="33186000" />
       <workItem from="1574556021760" duration="7000" />
-      <workItem from="1574556119968" duration="2215000" />
+      <workItem from="1574556119968" duration="4941000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <created>1574506967577</created>
@@ -263,7 +256,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40111000" />
+    <option name="totallyTimeSpent" value="42837000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="41" width="2560" height="1399" extended-state="6" />
@@ -412,8 +405,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xodr_viewer/xodr_viewer_window.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="343" column="64" selection-start-line="343" selection-start-column="64" selection-end-line="343" selection-end-column="64" />
+        <state relative-caret-position="292">
+          <caret line="256" column="54" selection-start-line="256" selection-start-column="54" selection-end-line="256" selection-end-column="54" />
         </state>
       </provider>
     </entry>
