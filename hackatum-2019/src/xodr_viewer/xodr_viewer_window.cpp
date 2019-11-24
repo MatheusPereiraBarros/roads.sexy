@@ -162,10 +162,10 @@ namespace aid {
         double getHeight(double x, double y, double minY, double minX, double width) {
             static siv::PerlinNoise noise(32);
             double n = noise.noise((x - minX) / width * noiseScale, (y - minY) / width * noiseScale);
-            double x_mid = minX+width/2;
-            double y_mid = minY+width/2;
-            double dist = sqrt((x-x_mid)*(x-x_mid) + (y-y_mid)*(y-y_mid));
-            n *= pow((1-cos(dist*3.14/(width/2)))/2, 1.1) + 0.5;
+            double x_mid = minX + width / 2;
+            double y_mid = minY + width / 2;
+            double dist = sqrt((x - x_mid) * (x - x_mid) + (y - y_mid) * (y - y_mid));
+            n *= pow((1 - cos(dist * 3.14 / (width / 2))) / 2, 1.1) + 0.4;
             return n * noiseHeight + noiseHeight;
         }
 
@@ -186,8 +186,8 @@ namespace aid {
         }
 
         std::stringstream writeStreet(
-                const LaneSection::BoundaryCurveTessellation &a,
-                const LaneSection::BoundaryCurveTessellation &b, double minY, double minX, double width,
+                const LaneSection::BoundaryCurveTessellation &b,
+                const LaneSection::BoundaryCurveTessellation &a, double minY, double minX, double width,
                 int &index_offset, double elevation) {
             std::stringstream res;
             static int seg_num = 0;
@@ -332,16 +332,16 @@ namespace aid {
                                        (i > boundaries.size() - 2 || lanes[i + 2].type() == LaneType::SIDEWALK)) {
                                 auto l = shift(right, left, road_markings_shift);
                                 auto r = shift(right, left, road_markings_shift + road_markings_width);
-                                DrawLane drawLane{std::move(l), std::move(r), road_markings_elevation};
+                                DrawLane drawLane{std::move(r), std::move(l), road_markings_elevation};
                                 lanes_to_draw_markings.push_back(drawLane);
                             }
                             if (i > 0 && lanes[i - 1].type() == LaneType::DRIVING) {
                                 for (int k = 0; k < left.vertices_.size() -
                                                     road_markings_stripe_length; k += road_markings_stripe_length +
                                                                                       road_markings_stripe_distance) {
-                                    auto l = shift(left, right, road_markings_width / 2, k,
+                                    auto l = shift(left, right, -road_markings_width / 2, k,
                                                    k + road_markings_stripe_length);
-                                    auto r = shift(left, right, -road_markings_width / 2, k,
+                                    auto r = shift(left, right, road_markings_width / 2, k,
                                                    k + road_markings_stripe_length);
                                     DrawLane drawLane{std::move(l), std::move(r), road_markings_elevation};
                                     lanes_to_draw_markings.push_back(drawLane);
@@ -421,7 +421,7 @@ namespace aid {
                         writeStreet(drawLane.left, drawLane.right, minY, minX, width, all_off, drawLane.elevation);
                 all << write.rdbuf();
 
-                write = writeStreet(drawLane.left, drawLane.right, minY, minX, width, streets_off, drawLane.elevation);
+                write = writeStreet(drawLane.left, drawLane.right, minY, minX, width, border_off, drawLane.elevation);
                 border << write.rdbuf();
             }
             for (const DrawLane &drawLane: lanes_to_draw_markings) {
@@ -429,7 +429,7 @@ namespace aid {
                         writeStreet(drawLane.left, drawLane.right, minY, minX, width, all_off, drawLane.elevation);
                 all << write.rdbuf();
 
-                write = writeStreet(drawLane.left, drawLane.right, minY, minX, width, streets_off, drawLane.elevation);
+                write = writeStreet(drawLane.left, drawLane.right, minY, minX, width, markings_off, drawLane.elevation);
                 markings << write.rdbuf();
             }
             for (const DrawLane &drawLane: lanes_to_draw_sidewalk) {
@@ -437,7 +437,7 @@ namespace aid {
                         writeStreet(drawLane.left, drawLane.right, minY, minX, width, all_off, drawLane.elevation);
                 all << write.rdbuf();
 
-                write = writeStreet(drawLane.left, drawLane.right, minY, minX, width, streets_off, drawLane.elevation);
+                write = writeStreet(drawLane.left, drawLane.right, minY, minX, width, sidewalk_off, drawLane.elevation);
                 sidewalk << write.rdbuf();
             }
 
@@ -447,7 +447,7 @@ namespace aid {
             terrain << "o terrain" <<
                     std::endl;
             all << "o terrain" <<
-                    std::endl;
+                std::endl;
 
             for (
                     int c = 0;
@@ -465,7 +465,7 @@ namespace aid {
                     terrain << "v " << x << " " << y << " " << z <<
                             std::endl;
                     all << "v " << x << " " << y << " " << z <<
-                            std::endl;
+                        std::endl;
 
                 }
             }
@@ -477,22 +477,19 @@ namespace aid {
                         int r = 0;
                         r < numPoints - 1; r++) {
                     int startNum = 1 + c + r * numPoints;
-                    terrain << "f " << startNum << " " << startNum + numPoints + 1 << " "
-                            << startNum + numPoints <<
+                    terrain << "f " << startNum + numPoints << " " << startNum + numPoints + 1 << " "
+                            << startNum <<
                             std::endl;
-                    terrain << "f " << startNum << " " << startNum + 1 << " "
-                            << startNum + numPoints + 1 <<
-                            std::endl;
-
-                    startNum += all_off;
-                    all << "f " << startNum << " " << startNum + numPoints + 1 << " "
-                            << startNum + numPoints <<
-                            std::endl;
-                    all << "f " << startNum << " " << startNum + 1 << " "
-                            << startNum + numPoints + 1 <<
+                    terrain << "f " << startNum + numPoints + 1 << " " << startNum + 1 << " "
+                            << startNum <<
                             std::endl;
 
-
+                    all << "f " << startNum + numPoints + all_off << " " << startNum + all_off + numPoints + 1 << " "
+                        << startNum + all_off <<
+                        std::endl;
+                    all << "f " << startNum + numPoints + 1 + all_off << " " << startNum + 1 + all_off << " "
+                        << startNum + all_off <<
+                        std::endl;
                 }
             }
             streets.close();
