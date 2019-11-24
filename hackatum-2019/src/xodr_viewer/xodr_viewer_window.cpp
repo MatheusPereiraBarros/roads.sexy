@@ -13,6 +13,7 @@
 #include <string>
 #include <fstream>
 #include <limits>
+#include <cmath>
 
 #include "bounding_rect.h"
 #include "xodr/xodr_map.h"
@@ -142,26 +143,30 @@ namespace aid {
         }
 
 
-        constexpr double padding = 10;
         constexpr double driving_elevation = 0.2;
         constexpr double sidewalk_elevation = 0.4;
         constexpr double border_elevation = 0.45;
-
         constexpr double road_markings_shift = 0.2;
+
         constexpr double road_markings_width = 0.25;
         constexpr double road_markings_elevation = 0.25;
         constexpr int road_markings_stripe_length = 3;
         constexpr int road_markings_stripe_distance = 3;
 
+        constexpr double padding = 300;
         constexpr int noiseScale = 5;
-        constexpr int noiseHeight = 5;
+        constexpr int noiseHeight = 20;
         constexpr int numPoints = 257;
 
 
         double getHeight(double x, double y, double minY, double minX, double width) {
             static siv::PerlinNoise noise(32);
-            return noise.noise((x - minX) / width * noiseScale, (y - minY) / width * noiseScale) * noiseHeight +
-                   noiseHeight;
+            double n = noise.noise((x - minX) / width * noiseScale, (y - minY) / width * noiseScale);
+            double x_mid = minX+width/2;
+            double y_mid = minY+width/2;
+            double dist = sqrt((x-x_mid)*(x-x_mid) + (y-y_mid)*(y-y_mid));
+            n *= pow((1-cos(dist*3.14/(width/2)))/2, 1.1) + 0.5;
+            return n * noiseHeight + noiseHeight;
         }
 
         LaneSection::BoundaryCurveTessellation shift(
