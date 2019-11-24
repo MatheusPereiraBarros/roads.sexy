@@ -268,6 +268,32 @@ namespace aid {
 
         }
 
+        std::stringstream writeOrientationParallel(
+                const LaneSection::BoundaryCurveTessellation &left,
+                const LaneSection::BoundaryCurveTessellation &right, double minY, double minX, double width,
+                double elevation) {
+            static int seg_num = 0;
+            std::stringstream res;
+            for (int j = 1; j < left.vertices_.size() - 1; j++) {
+                res << "o vec_num_" << seg_num++ << std::endl;
+                Eigen::Vector2d ptl = left.vertices_[j];
+                Eigen::Vector2d ptlPrev = left.vertices_[j - 1];
+                Eigen::Vector2d ptlNext = left.vertices_[j + 1];
+                Eigen::Vector2d ptlr = right.vertices_[j];
+
+                Eigen::Vector2d mid = (ptl + ptlr) / 2;
+                Eigen::Vector2d dir = mid + (ptlNext - ptlPrev).normalized();
+
+
+                res << "v " << mid.x() << " " << mid.y() << " "
+                    << getHeight(mid.x(), mid.y(), minX, minY, width) + elevation << std::endl;
+                res << "v " << ptlr.x() << " " << ptlr.y() << " "
+                    << getHeight(dir.x(), dir.y(), minX, minY, width) + elevation << std::endl;
+            }
+            return res;
+
+        }
+
         void XodrViewerWindow::XodrView::getObjFile() {
 
             int streets_off = 0;
@@ -297,6 +323,9 @@ namespace aid {
             std::ofstream street_geo;
             street_geo.open("./out/street_geo.obj");
 
+            std::ofstream street_lanes;
+            street_lanes.open("./out/street_lanes.obj");
+
             std::ofstream terrain_hm;
             terrain_hm.open("./out/terrain.raw", std::ios::out | std::ios::binary);
 
@@ -317,6 +346,8 @@ namespace aid {
             std::vector<DrawLane> lanes_to_draw_boundary;
             std::vector<DrawLane> lanes_to_draw_markings;
             std::vector<DrawLane> geometry;
+            std::vector<DrawLane> lane_directions;
+
 
 
             // roads
@@ -342,6 +373,12 @@ namespace aid {
 
                             DrawLane drawLane{left, right, driving_elevation};
                             lanes_to_draw.push_back(std::move(drawLane));
+
+                            if (i < boundaries.size() / 2) {
+                                lane_directions.push_back({right, left, sidewalk_elevation});
+                            } else {
+                                lane_directions.push_back({left, right, sidewalk_elevation});
+                            }
 
                             if (i > 0 && (lanes[i - 1].type() == LaneType::BORDER ||
                                           lanes[i - 1].type() == LaneType::SHOULDER) &&
@@ -377,9 +414,9 @@ namespace aid {
                             lanes_to_draw_sidewalk.push_back(std::move(drawLane));
 
                             if (i < boundaries.size() / 2) {
-                                geometry.push_back({right,left, sidewalk_elevation});
+                                geometry.push_back({right, left, sidewalk_elevation});
                             } else {
-                                geometry.push_back({left,right, sidewalk_elevation});
+                                geometry.push_back({left, right, sidewalk_elevation});
                             }
                         } else if (lanes[i].type() == LaneType::BORDER) {
                             if ((i < 1 || lanes[i - 1].type() != LaneType::SIDEWALK) &&
@@ -470,8 +507,13 @@ namespace aid {
                 write = writeStreet(drawLane.left, drawLane.right, minY, minX, width, sidewalk_off, drawLane.elevation);
                 sidewalk << write.rdbuf();
             }
-            for (const DrawLane& drawLane : geometry) {
-                street_geo << writeOrientation(drawLane.left, drawLane.right, minY, minX, width, drawLane.elevation).rdbuf();
+            for (const DrawLane &drawLane : geometry) {
+                street_geo << writeOrientation(drawLane.left, drawLane.right, minY, minX, width,
+                                               drawLane.elevation).rdbuf();
+            }
+            for (const DrawLane &drawLane : lane_directions) {
+                street_lanes << writeOrientationParallel(drawLane.left, drawLane.right, minY, minX, width,
+                                                         drawLane.elevation).rdbuf();
             }
 
             double delta = width / (numPoints - 1);
@@ -533,6 +575,7 @@ namespace aid {
             terrain_hm.close();
             all.close();
             street_geo.close();
+            street_lanes.close();
 
             std::cout << "Finished writing file." << std::endl <<
                       std::flush;
