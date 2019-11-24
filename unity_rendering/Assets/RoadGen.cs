@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,47 +12,88 @@ public class RoadGen : MonoBehaviour
     
     private void Start()
     {
-        GenRoad();
-        GenTerrain();
+
+        GenHouse();
+        //GenRoad();
+        //GenTerrain();
+    }
+
+    private void GenHouse()
+    {
+        ObjToMesh o = new ObjToMesh();
+        List<Tuple<Vector3, Vector3>> roadMesh = o.getPavementAnchors("D:\\roads.sexy\\unity_rendering\\Assets\\testAnchors.obj");
+        Debug.Log(roadMesh[0].Item1.ToString());
+        
     }
 
     private void GenRoad()
     {
         ObjToMesh o = new ObjToMesh();
-        Mesh importedMesh = o.genMesh("D:\\roads.sexy\\unity_rendering\\Assets\\road.obj");
+        Mesh roadMesh = o.genMesh("D:\\roads.sexy\\unity_rendering\\Assets\\objects\\streets.obj");
+        Mesh curbMesh = o.genMesh("D:\\roads.sexy\\unity_rendering\\Assets\\objects\\border.obj");
+        Mesh stripeMesh = o.genMesh("D:\\roads.sexy\\unity_rendering\\Assets\\objects\\markings.obj");
+        Mesh pavementMesh = o.genMesh("D:\\roads.sexy\\unity_rendering\\Assets\\objects\\sidewalk.obj");
 
-        Mesh m = importedMesh;
-
-        Mesh mesh = new Mesh();
-        mesh.Clear ();
-        mesh.vertices = m.vertices;
-        mesh.triangles = m.triangles;
-        mesh.RecalculateNormals();
-        
-        Texture ttt = Resources.Load("asphalt") as Texture;
-        Texture tt = Resources.Load("crack") as Texture;
-
-
+        // Road Asphalt Surface 
         GameObject go = new GameObject();
+        Texture asphaltTexture = Resources.Load("asphalt") as Texture;
         go.AddComponent<MeshFilter>();
         go.AddComponent<MeshRenderer>();
-        go.GetComponent<MeshFilter>().mesh = m;
-        go.GetComponent<MeshRenderer>().material.mainTexture = ttt;
+        go.GetComponent<MeshFilter>().mesh = roadMesh;
+        //go.transform.eulerAngles = new Vector3(-90, 0, 0);
+        go.GetComponent<MeshRenderer>().material.mainTexture = asphaltTexture;
         go.GetComponent<MeshRenderer>().material.mainTextureScale = new Vector2((float) 0.1, (float) 0.1);
         go.AddComponent<MeshCollider>();
+        
         roadMeshCollider = go.GetComponent<MeshCollider>();
         roadMeshCollider.convex = false;
         Debug.Log(roadMeshCollider);
-
+        
+        /*
+        // Road Asphalt Cracks
+        Texture asphaltCrackTexture = Resources.Load("crack") as Texture;
         GameObject goCrack = new GameObject();
         goCrack.AddComponent<MeshFilter>();
         goCrack.AddComponent<MeshRenderer>();
-        goCrack.GetComponent<MeshFilter>().mesh = m;
-        goCrack.GetComponent<MeshRenderer>().material.mainTexture = tt;
+        goCrack.GetComponent<MeshFilter>().mesh = roadMesh;
+        goCrack.GetComponent<MeshRenderer>().material.mainTexture = asphaltCrackTexture;
         //goCrack.GetComponent<MeshRenderer>().material.SetFloat("_Mode", 1);
         //goCrack.GetComponent<MeshRenderer>().material.DisableKeyword("_ALPHATEST_ON");
         //goCrack.GetComponent<MeshRenderer>().material.EnableKeyword("_ALPHABLEND_ON");
+        goCrack.transform.eulerAngles = new Vector3(-90, 0, 0);
         goCrack.GetComponent<MeshRenderer>().material.mainTextureScale = new Vector2((float) 0.1, (float) 0.1);
+        */
+        
+        // Road Curbs
+        Texture curbTexture = Resources.Load("pavement_texture") as Texture;
+        GameObject goCurb = new GameObject();
+        goCurb.AddComponent<MeshFilter>();
+        goCurb.AddComponent<MeshRenderer>();
+        goCurb.GetComponent<MeshFilter>().mesh = curbMesh;
+        goCurb.GetComponent<MeshRenderer>().material.mainTexture = curbTexture;
+        //  goCurb.transform.eulerAngles = new Vector3(-90, 0, 0);
+        goCurb.GetComponent<MeshRenderer>().material.mainTextureScale = new Vector2((float) 1, (float) 1);
+        
+        // Road Stripes
+        Texture stripsTexture = Resources.Load("line_texture") as Texture;
+        GameObject goStrips = new GameObject();
+        goStrips.AddComponent<MeshFilter>();
+        goStrips.AddComponent<MeshRenderer>();
+        goStrips.GetComponent<MeshFilter>().mesh = stripeMesh;
+        goStrips.GetComponent<MeshRenderer>().material.mainTexture = stripsTexture;
+        // goStrips.transform.eulerAngles = new Vector3(-90, 0, 0);
+        goStrips.GetComponent<MeshRenderer>().material.mainTextureScale = new Vector2((float) 0.5, (float) 0.5);
+        
+        // Road Sidewalk
+        Texture sideWalkTexture = Resources.Load("pavement") as Texture;
+        GameObject goSideWalk = new GameObject();
+        goSideWalk.AddComponent<MeshFilter>();
+        goSideWalk.AddComponent<MeshRenderer>();
+        goSideWalk.GetComponent<MeshFilter>().mesh = pavementMesh;
+        goSideWalk.GetComponent<MeshRenderer>().material.mainTexture = sideWalkTexture;
+        // goSideWalk.transform.eulerAngles = new Vector3(-90, 0, 0);
+        goSideWalk.GetComponent<MeshRenderer>().material.mainTextureScale = new Vector2((float) 0.75, (float) 0.75);
+        
     }
 
 
@@ -59,37 +101,23 @@ public class RoadGen : MonoBehaviour
     {
 
         ObjToMesh o = new ObjToMesh();
-        Mesh importedMesh = o.genMesh("D:\\roads.sexy\\unity_rendering\\Assets\\terrain.obj");
-
-        Mesh m = importedMesh;
-
-        Mesh mesh = new Mesh();
-        mesh.Clear ();
-        mesh.vertices = m.vertices;
-        mesh.triangles = m.triangles;
-        mesh.RecalculateNormals();
-        mesh.RecalculateBounds();
-
+        Mesh importedMesh = o.genMesh("D:\\roads.sexy\\unity_rendering\\Assets\\objects\\terrain.obj");
 
         GameObject go = new GameObject();
         go.AddComponent<MeshFilter>();
         go.AddComponent<MeshRenderer>();
-        go.GetComponent<MeshFilter>().sharedMesh = m;
+        go.GetComponent<MeshFilter>().mesh = importedMesh;
+        // go.transform.eulerAngles = new Vector3(-90, 0, 0);
         go.GetComponent<MeshRenderer>().material.mainTexture = Resources.Load("grass") as Texture;
-
-        float xMax = o.getMaxX(m.vertices);
-        float zMax = o.getMaxZ(m.vertices);
-        float zMin = o.getMinZ(m.vertices);
-        float xMin = o.getMinX(m.vertices);
+        go.GetComponent<MeshRenderer>().material.shader = Shader.Find("Nature/SpeedTree");
+                
 
         Random r = new Random();
-        int x = r.Next((int) xMin, (int) xMax);
-        int z = r.Next((int) zMin, (int) zMax);
-
-        for (int i = 0; i < m.vertexCount / 100; i++)
+        for (int i = 0; i < importedMesh.vertexCount / 10; i++)
         {
-            int v_index = r.Next(0, m.vertexCount);
-            Vector3 v = m.vertices[v_index];
+            int v_index = r.Next(0, importedMesh.vertexCount);
+            Vector3 v = importedMesh.vertices[v_index];
+
 
             if (!IsInCollider(roadMeshCollider, v))
             {
@@ -99,14 +127,12 @@ public class RoadGen : MonoBehaviour
 
                 grassObject.GetComponent<MeshRenderer>().material.mainTexture = Resources.Load("grass") as Texture;
             }
-            
-            if (!roadMeshCollider.bounds.Contains(v))
-            {
-                
-            }
-
-            
         }
+        
+        
+        
+        
+        
     }
     
     public  bool IsInCollider(MeshCollider other, Vector3 point) {
