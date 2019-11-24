@@ -23,6 +23,7 @@ public sealed class ObjToMesh
 
         foreach (String line in lines)
         {
+            if (line.Equals("")) continue;
             String[] l = line.Split(' ');
             char type = line.ToCharArray()[0];
             switch (type)
@@ -31,7 +32,7 @@ public sealed class ObjToMesh
                     
                     break;
                 case 'v':
-                    verts.Add(new Vector3(float.Parse(l[1]), float.Parse(l[3]), float.Parse(l[2])));
+                    verts.Add(new Vector3(float.Parse(l[1]), float.Parse(l[3]), -float.Parse(l[2])));
                     break;
                 case 'f':
                     if (l.Length == 4)
@@ -42,16 +43,6 @@ public sealed class ObjToMesh
                     }
 
                     break;
-            }
-
-            if (l[0] == "o")
-            {
-            }
-            else if (l[0] == "v")
-            {
-            }
-            else if (l[0] == "f")
-            {
             }
         }
         
@@ -65,7 +56,7 @@ public sealed class ObjToMesh
                         
         for (int i = 0; i < uvs.Length; i++)
         {
-            uvs[i] = new Vector2(verts[i].x, verts[i].z);
+            uvs[i] =  Quaternion.AngleAxis(20, Vector3.right) * (new Vector2(verts[i].x, verts[i].z));
         }
 
         myMesh.uv = uvs;
@@ -75,6 +66,51 @@ public sealed class ObjToMesh
         tris.Clear();
 
         return myMesh;
+    }
+    
+    public List<Tuple<Vector3, Vector3>> getPavementAnchors(String fileName)
+    {
+        List<Tuple<Vector3, Vector3>> anchors = new List<Tuple<Vector3, Vector3>>();
+        
+        String text = File.ReadAllText(fileName);
+        Debug.Log(text);
+        String[] lines = text.Split('\n');
+        int pair_index = 0;
+        Vector3 v = new Vector3();
+        
+        foreach (String line in lines)
+        {
+            if (line.Equals("")) continue;
+            String[] l = line.Split(' ');
+            char type = line.ToCharArray()[0];
+            Debug.Log(type);
+            switch (type)
+            {
+                case 'o':
+
+                    break;
+                case 'v':
+                    if (pair_index == 0)
+                    {
+                        v = new Vector3(float.Parse(l[1]), float.Parse(l[3]), -float.Parse(l[2]));
+                        pair_index = 1;
+                    }
+                    else
+                    {
+                        Debug.Log("Added");
+                        anchors.Add(new Tuple<Vector3, Vector3>(v,
+                            new Vector3(float.Parse(l[1]), float.Parse(l[3]), -float.Parse(l[2]))));
+                        pair_index = 0;
+                    }
+
+                    break;
+                case 'f':
+
+                    break;
+            }
+        }
+
+        return anchors;
     }
 
     public float getMaxX(Vector3[] arr)
